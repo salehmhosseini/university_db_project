@@ -92,4 +92,12 @@ body {
    .text-center {
      margin-top: 20px;
    }
+   input:invalid {
+    border-color: red;
+  }
+  
+  input:invalid::-webkit-validation-bubble {
+    background-color: red;
+    color: white;
+  }
    
