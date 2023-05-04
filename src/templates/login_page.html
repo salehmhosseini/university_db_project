@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.1/css/bootstrap.min.css" integrity="sha512-BtFhH0Zmk3q81eNtZTKpDPsoBxo4O4pUE9XSTiKTcOmvzgSrkY2l0plFjsgfZ5dOZcB8QVBssbLxU6EheU6Mpw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../static/login_style.css">
+  </head>
+  <body>
+    <div class="container d-flex justify-content-center align-items-center">
+      <form class="needs-validation" novalidate>
+        <h1 class="text-center">Ferdowsi University of Mashhad</h1>
+        <h2 class="text-center">Database Project</h2>
+
+        <div class="form-floating mb-3">
+          <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
+          <label for="email">Email address</label>
+          <div class="invalid-feedback">
+          </div>
+        </div>
+
+        <div class="form-floating mb-3">
+          <input type="password" class="form-control" id="password" placeholder="Password" required>
+          <label for="password">Password</label>
+          <div class="invalid-feedback">
+          </div>
+        </div>
+
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <label for="status">I am a:</label>
+          <div id="status">
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="status" id="student" value="student" required>
+              <label class="form-check-label" for="student">Student</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="status" id="teacher" value="teacher" required>
+              <label class="form-check-label" for="teacher">Teacher</label>
+            </div>
+            <div class="invalid-feedback">
+            </div>
+          </div>
+        </div>
+
+        <div class="d-grid mb-3">
+          <button type="submit" class="btn btn-primary rounded-pill btn-lg shadow-sm">Login</button>
+        </div>
+
+        <div class="text-center">
+          <a href="#">Signup</a>
+          <span class="mx-2">|</span>
+          <a href="#">Forgot Password</a>
+        </div>
+      </form>
+    </div>
+    </body>
+  </html>
