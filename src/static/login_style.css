@@ -82,6 +82,13 @@ body {
    
    .form-floating {
      margin-bottom: 20px;
+
+
+   }
+   .form-floating input{
+     border-width: 2px;
+     border-color: #ceebff;
+     border-radius: 4px;
    }
    
    .d-grid {
@@ -93,11 +100,28 @@ body {
      margin-top: 20px;
    }
    input:invalid {
-    border-color: red;
+/*     border-color: red; */
   }
   
   input:invalid::-webkit-validation-bubble {
-    background-color: red;
+/*     background-color: red; */
     color: white;
   }
-   
+
+.container {
+  position: relative; }
+
+.container::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%); 
+  width: 100px;
+  height: 100px; 
+  background-image: url('logo.png'); 
+  background-repeat: no-repeat;
+  background-size: contain; 
+  z-index: 1; 
+  padding-bottom: 2%;}
