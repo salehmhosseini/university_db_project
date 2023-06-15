@@ -1,0 +1,340 @@
+@font-face {
+    font-family: 'iransansfanum';
+    src: url('https://pooya.um.ac.ir/shares/UI/fonts/IRANSansWeb/IRANSansWebFaNum_Light.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: IRANSans;
+    font-style: normal;
+    font-weight: 900;
+    src: url('https://pooya.um.ac.ir/shares/UI/fonts/IRANSansWeb/eot/IRANSansWeb_Black.eot');
+    src: url('https://pooya.um.ac.ir/shares/UI/fonts/IRANSansWeb/eot/IRANSansWeb_Black.eot?') format('embedded-opentype'), /* IE6-8 */ url('../fonts/IRANSansWeb/woff2/IRANSansWeb_Black.woff2') format('woff2'), /* FF39+,Chrome36+, Opera24+*/ url('../fonts/IRANSansWeb/woff/IRANSansWeb_Black.woff') format('woff'), /* FF3.6+, IE9, Chrome6+, Saf5.1+*/ url('../fonts/IRANSansWeb/ttf/IRANSansWeb_Black.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: IRANSans;
+    font-style: normal;
+    font-weight: bold;
+    src: url('https://pooya.um.ac.ir/shares/UI/fonts/IRANSansWeb/eot/IRANSansWeb_Bold.eot');
+    src: url('https://pooya.um.ac.ir/shares/UI/fonts/IRANSansWeb/eot/IRANSansWeb_Bold.eot?') format('embedded-opentype'), /* IE6-8 */ url('../fonts/IRANSansWeb/woff2/IRANSansWeb_Bold.woff2') format('woff2'), /* FF39+,Chrome36+, Opera24+*/ url('../fonts/IRANSansWeb/woff/IRANSansWeb_Bold.woff') format('woff'), /* FF3.6+, IE9, Chrome6+, Saf5.1+*/ url('../fonts/IRANSansWeb/ttf/IRANSansWeb_Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: IRANSans;
+    font-style: normal;
+    font-weight: 500;
+    src: url('https://pooya.um.ac.ir/shares/UI/fonts/IRANSansWeb/eot/IRANSansWeb_Medium.eot');
+    src: url('https://pooya.um.ac.ir/shares/UI/fonts/IRANSansWeb/eot/IRANSansWeb_Medium.eot?') format('embedded-opentype'), /* IE6-8 */ url('../fonts/IRANSansWeb/woff2/IRANSansWeb_Medium.woff2') format('woff2'), /* FF39+,Chrome36+, Opera24+*/ url('../fonts/IRANSansWeb/woff/IRANSansWeb_Medium.woff') format('woff'), /* FF3.6+, IE9, Chrome6+, Saf5.1+*/ url('../fonts/IRANSansWeb/ttf/IRANSansWeb_Medium.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: IRANSans;
+    font-style: normal;
+    font-weight: 300;
+    src: url('https://pooya.um.ac.ir/shares/UI/fonts/IRANSansWeb/eot/IRANSansWeb_Light.eot');
+    src: url('https://pooya.um.ac.ir/shares/UI/fonts/IRANSansWeb/eot/IRANSansWeb_Light.eot?') format('embedded-opentype'), /* IE6-8 */ url('../fonts/IRANSansWeb/woff2/IRANSansWeb_Light.woff2') format('woff2'), /* FF39+,Chrome36+, Opera24+*/ url('../fonts/IRANSansWeb/woff/IRANSansWeb_Light.woff') format('woff'), /* FF3.6+, IE9, Chrome6+, Saf5.1+*/ url('../fonts/IRANSansWeb/ttf/IRANSansWeb_Light.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: IRANSans;
+    font-style: normal;
+    font-weight: 200;
+    src: url('https://pooya.um.ac.ir/shares/UI/fonts/IRANSansWeb/eot/IRANSansWeb_UltraLight.eot');
+    src: url('https://pooya.um.ac.ir/shares/UI/fonts/IRANSansWeb/eot/IRANSansWeb_UltraLight.eot?') format('embedded-opentype'), /* IE6-8 */ url('../fonts/IRANSansWeb/woff2/IRANSansWeb_UltraLight.woff2') format('woff2'), /* FF39+,Chrome36+, Opera24+*/ url('../fonts/IRANSansWeb/woff/IRANSansWeb_UltraLight.woff') format('woff'), /* FF3.6+, IE9, Chrome6+, Saf5.1+*/ url('../fonts/IRANSansWeb/ttf/IRANSansWeb_UltraLight.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: IRANSans;
+    font-style: normal;
+    font-weight: normal;
+    src: url('https://pooya.um.ac.ir/shares/UI/fonts/IRANSansWeb/eot/IRANSansWeb.eot');
+    src: url('https://pooya.um.ac.ir/shares/UI/fonts/IRANSansWeb/eot/IRANSansWeb.eot?') format('embedded-opentype'), /* IE6-8 */ url('../fonts/IRANSansWeb/woff2/IRANSansWeb.woff2') format('woff2'), /* FF39+,Chrome36+, Opera24+*/ url('../fonts/IRANSansWeb/woff/IRANSansWeb.woff') format('woff'), /* FF3.6+, IE9, Chrome6+, Saf5.1+*/ url('../fonts/IRANSansWeb/ttf/IRANSansWeb.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: IRANSansWebFaNum;
+    font-style: normal;
+    font-weight: normal;
+    src: url('https://pooya.um.ac.ir/shares/UI/fonts/IRANSansWeb/eot/IRANSansWebFaNum_Light.eot');
+    src: url('https://pooya.um.ac.ir/shares/UI/fonts/IRANSansWeb/eot/IRANSansWebFaNum_Light.eot?') format('embedded-opentype'), /* IE6-8 */ url('../fonts/IRANSansWeb/woff2/IRANSansWebFaNum_Light.woff2') format('woff2'), /* FF39+,Chrome36+, Opera24+*/ url('../fonts/IRANSansWeb/woff/IRANSansWebFaNum_Light.woff') format('woff'), /* FF3.6+, IE9, Chrome6+, Saf5.1+*/ url('https://pooya.um.ac.ir/shares/UI/fonts/IRANSansWeb/ttf/IRANSansWebFaNum_Light.ttf') format('truetype');
+}
+
+*{
+    font-family: IRANSans;
+}
+
+body {
+    font-size: 13px !important;
+    color: #34495e !important;
+    background: #F1F1F1 !important;
+}
+
+h3 {
+    font-size: 14px;
+}
+
+/******************* page ****************/
+.container-fluid {
+    padding-right: 50px;
+    padding-left: 50px;
+}
+
+.page-title {
+    display: block;
+    padding: 0;
+    text-align: right;
+    color: #666;
+    margin: 50px 0 20px;
+    font-family: IRANSans;
+    font-weight: 400;
+    font-size: 22px;
+}
+
+.page-title .title-text {
+    margin-left: 5px;
+}
+
+.page-title .fa-external-link-alt {
+    font-size: 15px;
+}
+
+.alert {
+    font-size: inherit;
+}
+
+.no-result .alert {
+    margin: 40px 0;
+    line-height: 2em;
+}
+
+.no-result .alert ul {
+    font-family: IRANSans;
+    font-size: 13px;
+    line-height: 1.7em;
+    padding: 0;
+    margin: 0;
+    color: #34495e;
+}
+
+.innt-wrapper {
+    background: white;
+    padding: 25px;
+    margin-bottom: 30px;
+    border-color: #e7ecf1 !important;
+    border-radius: 4px;
+    box-shadow: 0 2px 3px 2px rgba(0, 0, 0, .03);
+}
+
+.innt-wrapper h3 {
+    color: #2C3E50;
+    margin: 20px;
+}
+
+a:link,
+a:visited {
+    font-size: 13px;
+    color: #007bff;
+    font-family: IRANSans;
+    text-decoration: none;
+    transition: color 0.5s;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #0056B3;
+}
+
+li a:link,
+li a:active {
+    font-family: IRANSans;
+    font-weight: 400;
+    font-size: 14px;
+    outline: none;
+}
+
+h3 font[color] {
+    color: #2C3E50;
+    display: block;
+    margin: 20px;
+}
+
+.fa, .fas {
+    margin: 2px;
+}
+
+.help-block {
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    color: #6789ab;
+}
+
+span[onclick] {
+    cursor: pointer;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+span[onclick]:hover {
+    filter: grayscale(50%);
+}
+
+.has-error .checkbox, .has-error .checkbox-inline,
+.has-error .control-label, .has-error .form-control-feedback,
+.has-error .help-block, .has-error .radio, .has-error .radio-inline,
+.has-error.checkbox label, .has-error.checkbox-inline label,
+.has-error.radio label, .has-error.radio-inline label,
+.form-group label.error,
+span.required {
+    color: #dc3545;
+}
+
+.has-error .form-control,
+.form-control.error {
+    border-color: #dc3545;
+}
+.fa-1 {
+    font-size: 12px;
+}
+.fa-2 {
+    font-size: 16px;
+}
+.fa-3 {
+    font-size: 24px;
+}
+.fa-4 {
+    font-size: 32px;
+}
+.fa-5 {
+    font-size: 48px;
+}
+.fa-6 {
+    font-size: 64px;
+}
+.fa-7 {
+    font-size: 128px;
+}
+
+.fa-calendar-wrapper .datepicker-button {
+    box-shadow: none !important;
+    border: 0 !important;
+    background: transparent;
+}
+
+.fa-calendar-wrapper .input-group-text {
+    padding: 0;
+    height: 34px;
+    padding-top: 5px;
+}
+.form-control,
+.form-control:focus {
+    box-shadow: none;
+    font-size:14px;
+}
+.ui-datepicker td span, .ui-datepicker td a {
+    font-family: IRANSansWebFaNum !important;
+}
+.nav-tabs {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border-bottom: 1px solid #ddd;
+}
+.nav-link:focus,
+.nav-link:hover {
+    border-color:transparent;
+    background: #EEEEEE;
+}
+.close:not(:disabled):not(.disabled):focus,
+.close:not(:disabled):not(.disabled):hover {
+    outline:none;
+}
+.fieldset {
+    border: 1px solid #c2cad8;
+    padding: 25px;
+}
+.legend {
+    width: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size:18px;
+}
+h2 {
+    font-size: 20px;
+}
+
+/********* Blue Skin ***********/
+.table th {
+    background: #5FA2DD;
+}
+.table.table-striped tr:nth-of-type(odd) {
+    background-color: #F6F6F6;
+}
+.table.table-striped tr:hover {
+    background: #e6f1f6;
+}
+
+/****** buttons *******/
+.btn-success {
+    background: #9cc96b;
+    border-color: #9cc96b;
+}
+.btn-danger {
+    background: #e3495a;
+    border-color:#e3495a;
+}
+.btn-primary {
+    background: #167abc;
+    border-color:#167abc;
+}
+.calendar-row input[type=text]{
+    display: inline-block;
+    width: 140px;
+    padding-left: 30px;
+}
+.calendar-row .fa-calendar {
+    position: relative;
+    right: -30px;
+    font-size: 14px;
+}
+table.layout-table td {
+    font-family: IRANSans;
+    font-size:13px;
+}
+.accordion-tabs .card .card-header .card-link:after {
+    content: "\f107";
+    font-family: 'FontAwesome';
+    font-weight: 900;
+    float: right;
+    margin-left:5px;
+}
+.accordion-tabs .card .card-header .card-link.collapsed:after {
+    content: "\f104";
+}
+.collapse-tab .card-header .card-link:after,
+.collapse-tab .card-header .card-link.collapsed:after,
+.collapse-tab .card-header .card-link[aria-expanded="false"]:after {
+    content: "\f055";
+    font-family: 'FontAwesome';
+    font-weight: 900;
+    float: right;
+    margin-left:5px;
+}
+.collapse-tab .card-header .card-link[aria-expanded="true"]:after {
+    content: "\f056";
+}
+.iconColor-green {
+    color: #00D060 !important;
+}
+.text-violet, .iconColor-violet{
+    color: #be4be8 !important;
+}
+.text-orange, .iconColor-orange {
+    color: #ff9307  !important;
+}
+
+
+
+
+
