@@ -1,0 +1,108 @@
+.login-form .input-group {
+     border: 1px solid #c2cad8;
+     background: #fff;
+     padding: 3px;
+     display: flex;
+     align-items: center;
+     color: #444;
+   }
+
+   .login-form .input-group i {
+     opacity: 0.5;
+     font-size: 20px;
+   }
+
+   .fa-sync {
+     font-size: 20px;
+     vertical-align: middle;
+   }
+
+   h1, h2 {
+     font-size: 18px;
+   }
+
+   .fum-logo {
+     width: 80px;
+   }
+
+   .left-side {
+     background: #167abc;
+     color: rgba(255, 255, 255, 0.8);;
+   }
+
+   .left-side a {
+     color: rgba(255, 255, 255, 1);
+     transition: all 0.2s;
+     text-decoration: none;
+     opacity: 0.8;
+   }
+
+   .left-side a:hover {
+     color: rgba(255, 255, 255, 1);
+     opacity: 1;
+   }
+
+   .left-side .services {
+     color: rgba(255, 255, 255, 0.9);
+   }
+
+   .left-side .services a {
+     opacity: 1;
+   }
+
+   .fa-keyboard {
+     padding-top: 5px;
+     padding-left: 2px;
+   }
+
+   .img-white {
+     filter: brightness(300%);
+   }
+
+   .size-4 {
+     width: 48px;
+   }
+
+   .services .carousel-inner {
+     height: 150px;
+   }
+
+   .services .carousel-controls a {
+     position: relative;
+     display: inline;
+     font-size: 20px;
+     opacity: 0.5;
+   }
+
+   .services .carousel-indicators {
+     position: relative;
+   }
+
+   .carousel-indicators li {
+     width: 10px;
+     height: 10px;
+     border-radius: 50%;
+   }
+
+   .help-block {
+     font-size: 12px;
+   }
+
+   @media screen and (max-width: 576px) {
+     .forget-pass {
+       text-align: center !important;
+       margin-top: 10px;
+     }
+     .form-group {
+       margin-bottom: 0;
+     }
+     .form-group .input-group {
+       margin-bottom: 10px;
+     }
+     .form-group button {
+       margin-top: 10px;
+     }
+     .capt-img {
+       text-align: center;
+     }
+   }
