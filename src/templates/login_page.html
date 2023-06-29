@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fa">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="expires" content="now">
@@ -9,227 +10,239 @@
     <title> صفحه ورود</title>
     <script type="text/javascript" src="md5.js"></script>
     <link rel="stylesheet" href="../static/login_page.css">
-    
 
-        <link rel="stylesheet" href="../static/bootstrap-4-rtl.min.css">
-        <link rel="stylesheet" href="../static/font-awesome-all.min.css">
-        <link rel="stylesheet" href="../static/custom-style.css">
-        <script src="../static/js/jquery-3.3.1.min.js"></script>
-        <script src="../static/js/popper.min.js"></script>
-        <script src="../static/js/bootstrap-4.2.1.min.js"></script>
-        <script src="../static/js/login_page.js"></script>
+
+    <link rel="stylesheet" href="../static/bootstrap-4-rtl.min.css">
+    <link rel="stylesheet" href="../static/font-awesome-all.min.css">
+    <link rel="stylesheet" href="../static/custom-style.css">
+    <script src="../static/js/jquery-3.3.1.min.js"></script>
+    <script src="../static/js/popper.min.js"></script>
+    <script src="../static/js/bootstrap-4.2.1.min.js"></script>
+    <script src="../static/js/login_page.js"></script>
 
 </head>
+
 <body dir="rtl">
-<main class="d-flex align-items-center min-vh-100 py-3 py-md-0">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-9 mx-auto">
-                <div class="login-card row bg-light shadow mx-2">
-                    <div class="col-md-7 p-4 pt-5 align-self-center">
-                        <h1 class="text-center">
-                            <a href="https://www.um.ac.ir" target="_blank" title="دانشگاه فردوسی مشهد">
-                                <img class="fum-logo" src="../static/images/fum-logo.png">
-                            </a>
-                        </h1>
-                        <h2 class="text-center my-3">
-                        <span>
-                            پرتال ورود یکپارچه اعضا <br> <br>پروژه دانشگاهی <br> <br> نام گروه : ?
-                        </span>
-                        </h2>
-                                                                        <form class="login-form px-md-4" name="LoginForm" action="https://pooya.um.ac.ir/gateway/UserInterim.php" method="POST"
-                              onSubmit="return ChkForm(this);" target="">
-                            <input name="UserPassword" type="hidden" value="">
-                            <input type='hidden' id='pswdStatus' name='pswdStatus'>
-                            <div class="form-group row">
-                                <div class="col">
-                                    <div class="input-group pr-1 rounded">
-                                        <input type="text" name="UserID" id="UserID" class="form-control border-0"
-                                               required
-                                               placeholder="نام کاربری">
-                                        <a href="JavaScript:OpenKeyboard(document.LoginForm.elements['UserID'])"
-                                           tabindex="-1">
-                                            <i class="fa text-secondary fa-keyboard"></i>
-                                        </a>
-                                        <i class="fa text-secondary fa-user-circle"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col">
-                                    <div class="input-group pr-1 rounded">
-                                        <input type="password" name="DummyVar" id="DummyVar" maxlength="30"
-                                               required class="form-control border-0" placeholder="رمز عبور">
-                                        <a href="JavaScript:OpenKeyboard(document.LoginForm.elements['DummyVar'])"
-                                           tabindex="-1">
-                                            <i class="fa text-secondary fa-keyboard"></i>
-                                        </a>
-                                        <i class="fa text-secondary fa-lock"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                        <div class="col">
-                            <div class="input-group pr-1 rounded">
-                                <input type="hidden" id="rand2" name="rand2" value="SWVpaUx3SDVvYktRYzBqRkF0SHg1RTJ4ZzJXMGE2YVJvc014L0lWRFlnTT0=" >
-                                <input type="text" name="mysecpngco" id="mysecpngco" autocomplete="off" maxlength="20"
-                                       required class="form-control border-0" placeholder="کد امنیتی">
-                                <a href="JavaScript:OpenKeyboard(document.LoginForm.elements['mysecpngco'])"
-                                   tabindex="-1">
-                                    <i class="fa text-secondary fa-keyboard"></i>
+    <main class="d-flex align-items-center min-vh-100 py-3 py-md-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9 mx-auto">
+                    <div class="login-card row bg-light shadow mx-2">
+                        <div class="col-md-7 p-4 pt-5 align-self-center">
+                            <h1 class="text-center">
+                                <a href="https://www.um.ac.ir" target="_blank" title="دانشگاه فردوسی مشهد">
+                                    <img class="fum-logo" src="../static/images/fum-logo.png">
                                 </a>
-                                <i class="fa text-secondary fa-exclamation-circle"></i>
-                            </div>
-                        </div>
-                        </div>
-                        <div class="form-group row text-center">
-                        <div class="col-12">
-                            <div><img id="secimg" name="secimg" alt="Security Code" src="../static/images/ShowSecurityImage.php@rand=1337222383&rand2=SWVpaUx3SDVvYktRYzBqRkF0SHg1RTJ4ZzJXMGE2YVJvc014L0lWRFlnTT0="/>
-                            <a href="JavaScript:RefreshCaptcha();">
-                      <span class="fa fa-sync text-dark">🔁</span>
-                    </a>
-                </div>
-                    </div>
-                        <div class="col-12">
-                        کاراکترهایی که در تصویر مشاهده می نمایید در فیلد کد امنیتی به ترتیب وارد نمایید.
-                        </div>
-                    </div>       
-                            <div class="form-group row align-items-center">
-                                <div class="col-md-6">
-                                    <button type="submit" class="btn btn-primary btn-block" value="ورود">ورود</button>
-                                </div>
-                                <div class="col-md-6 text-right forget-pass">
-                                    <a href="./user_recovery_pass.html">فراموشی رمز ورود</a>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="col-md-5 pt-5 p-4 left-side">
-                        <div class="row text-center services h-50 align-content-end">
-                            <div class="col">
-                                <div id="msgSlides" class="carousel slide" data-ride="carousel">
-                                    <!-- The slideshow -->
-                                    <div class="carousel-inner">
-                                                                                <div class="carousel-item active">
-                                        <span class="font-weight-bold mb-2 d-block">
-                                        تلفن پشتیبانی
-                                        </span>
-                                            <p class="mt-3">
-                                                <i class="fa fa-2x d-block fa-phone-square"></i>
-                                                <span class="d-block p-2">
-                                             شماره داخلی 3030
-                                            <br>
-                                            خارج از دانشگاه
-                                                <span dir="ltr">
-                                                    051-38803030
-                                                </span>
-                                            </span>
-                                            </p>
-                                        </div>
-                                        <div class="carousel-item">
-                                            <span class="font-weight-bold mb-2 d-block"> اداره دانش آموختگان </span>
-                                            <p>
-                                                <i class="fa fa-hand-point-left"></i>
-                                                چنانچه از دانش آموختگان دانشگاه فردوسی مشهد می باشید که درخواست
-                                                <span class="text-warning">
-                                                    تغییر در رمز و یا شماره تلفن همراه خود را دارید و یا اینکه کد ملی شما در
-                                                سامانه ثبت نشده است
-                                                </span>
-                                                لطفا با شماره زیر تماس بگیرد:
-                                            </p>
-                                            <p class="mt-3">
-                                                <span class="d-block p-2">
-                                                شماره داخلی 6635
-                                                <br />
-                                                خارج از دانشگاه
-                                                <span dir="ltr"> 051-38806635 </span>
-                                                </span>
-                                            </p>
-                                        </div>
-
-                                        <div class="carousel-item">
-                                        <span class="font-weight-bold mb-2 d-block">
-                                        گزارش خطا (تیکتینگ)
-                                        </span>
-                                            <p>
-                                                <i class="fa fa-hand-point-left"></i>
-                                                در صورتیکه با خطایی در سامانه ها برخورد کردید یا ابهامی در استفاده
-                                                داشتید از طریق لینک <span class="text-warning">تیکت (گزارش خطا)</span>
-                                                که در گوشه بالا-چپ سامانه ها قرار دارد، مطلب خود را ارسال و پاسخ را از
-                                                همان مسیر پیگیری کنید.
-                                            </p>
-                                        </div>
-                                        <div class="carousel-item">
-                                        <span class="font-weight-bold mb-2 d-block">
-                                            نظام پیشنهادها
-                                        </span>
-                                            <p>
-                                                <i class="fa fa-hand-point-left"></i>
-                                                با مراجعه به <span class="text-warning">پورتال پویا/ لبه توسعه منابع/ تحول سازمانی/ ارائه پیشنهاد</span>
-                                                پیشنهادات خود را برای بهبود سامانه ها یا خدمات فاوای دانشگاه ارسال
-                                                نمایید.
-                                            </p>
-                                        </div>
-                                        <div class="carousel-item">
-                                        <span class="font-weight-bold mb-2 d-block">
-                                        درخواست توسعه
-                                        </span>
-                                            <p>
-                                                <i class="fa fa-hand-point-left"></i>
-                                                درخواست طراحی یا تغییر سامانه ها بر اساس شیوه نامه بهبود فرآیندهای
-                                                دانشگاه مندرج در منو <a class="text-warning"
-                                                                        href="http://ict.um.ac.ir/index.php?option=com_content&view=category&id=50&Itemid=377&lang=fa"
-                                                                        target="_blank">دستورالعملها و فرآیندها/ نرم
-                                                    افزار</a> سایت
-                                                <a href="http://ict.um.ac.ir/" target="_blank" class="text-warning">ict.um.ac.ir</a>
-                                                انجام می شود. </p>
+                            </h1>
+                            <h2 class="text-center my-3">
+                                <span>
+                                    پرتال ورود یکپارچه اعضا <br> <br>پروژه دانشگاهی <br> <br> نام گروه
+                                </span>
+                            </h2>
+                            <form class="login-form px-md-4" name="LoginForm"
+                                action="https://pooya.um.ac.ir/gateway/UserInterim.php" method="POST"
+                                onSubmit="return ChkForm(this);" target="">
+                                <input name="UserPassword" type="hidden" value="">
+                                <input type='hidden' id='pswdStatus' name='pswdStatus'>
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <div class="input-group pr-1 rounded">
+                                            <input type="text" name="UserID" id="UserID" class="form-control border-0"
+                                                required placeholder="نام کاربری">
+                                            <a href="JavaScript:OpenKeyboard(document.LoginForm.elements['UserID'])"
+                                                tabindex="-1">
+                                                <i class="fa text-secondary fa-keyboard"></i>
+                                            </a>
+                                            <i class="fa text-secondary fa-user-circle"></i>
                                         </div>
                                     </div>
-                                    <!-- Indicators -->
-                                    <ul class="carousel-indicators">
-                                                                                <li data-target="#msgSlides" data-slide-to="0" class="active"></li>
-                                        <li data-target="#msgSlides" data-slide-to="1"></li>
-                                        <li data-target="#msgSlides" data-slide-to="2"></li>
-                                        <li data-target="#msgSlides" data-slide-to="3"></li>
-                                        <li data-target="#msgSlides" data-slide-to="4"></li>
-                                    </ul>
-
                                 </div>
-                            </div>
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <div class="input-group pr-1 rounded">
+                                            <input type="password" name="DummyVar" id="DummyVar" maxlength="30" required
+                                                class="form-control border-0" placeholder="رمز عبور">
+                                            <a href="JavaScript:OpenKeyboard(document.LoginForm.elements['DummyVar'])"
+                                                tabindex="-1">
+                                                <i class="fa text-secondary fa-keyboard"></i>
+                                            </a>
+                                            <i class="fa text-secondary fa-lock"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <div class="input-group pr-1 rounded">
+                                            <input type="hidden" id="rand2" name="rand2"
+                                                value="SWVpaUx3SDVvYktRYzBqRkF0SHg1RTJ4ZzJXMGE2YVJvc014L0lWRFlnTT0=">
+                                            <input type="text" name="mysecpngco" id="mysecpngco" autocomplete="off"
+                                                maxlength="20" required class="form-control border-0"
+                                                placeholder="کد امنیتی">
+                                            <a href="JavaScript:OpenKeyboard(document.LoginForm.elements['mysecpngco'])"
+                                                tabindex="-1">
+                                                <i class="fa text-secondary fa-keyboard"></i>
+                                            </a>
+                                            <i class="fa text-secondary fa-exclamation-circle"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row text-center">
+                                    <div class="col-12">
+                                        <div><img id="secimg" name="secimg" alt="Security Code"
+                                                src="../static/images/ShowSecurityImage.php@rand=1337222383&rand2=SWVpaUx3SDVvYktRYzBqRkF0SHg1RTJ4ZzJXMGE2YVJvc014L0lWRFlnTT0=" />
+                                            <a href="JavaScript:RefreshCaptcha();">
+                                                <span class="fa fa-sync text-dark">🔁</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        کاراکترهایی که در تصویر مشاهده می نمایید در فیلد کد امنیتی به ترتیب وارد نمایید.
+                                    </div>
+                                </div>
+                                <div class="form-group row align-items-center">
+                                    <div class="col-md-6">
+                                        <button type="submit" class="btn btn-primary btn-block"
+                                            value="ورود">ورود</button>
+                                    </div>
+                                    <div class="col-md-6 text-right forget-pass">
+                                        <a href="./user_recovery_pass.html">فراموشی رمز ورود</a>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
-                        <div class="row text-center py-2 h-50 align-content-end ">
-                            <div class="col-12 mb-2">
+                        <div class="col-md-5 pt-5 p-4 left-side">
+                            <div class="row text-center services h-50 align-content-end">
+                                <div class="col">
+                                    <div id="msgSlides" class="carousel slide" data-ride="carousel">
+                                        <!-- The slideshow -->
+                                        <div class="carousel-inner">
+                                            <div class="carousel-item active">
+                                                <span class="font-weight-bold mb-2 d-block">
+                                                    تلفن پشتیبانی
+                                                </span>
+                                                <p class="mt-3">
+                                                    <i class="fa fa-2x d-block fa-phone-square"></i>
+                                                    <span class="d-block p-2">
+                                                        شماره داخلی 3030
+                                                        <br>
+                                                        خارج از دانشگاه
+                                                        <span dir="ltr">
+                                                            051-38803030
+                                                        </span>
+                                                    </span>
+                                                </p>
+                                            </div>
+                                            <div class="carousel-item">
+                                                <span class="font-weight-bold mb-2 d-block"> اداره دانش آموختگان </span>
+                                                <p>
+                                                    <i class="fa fa-hand-point-left"></i>
+                                                    چنانچه از دانش آموختگان دانشگاه فردوسی مشهد می باشید که درخواست
+                                                    <span class="text-warning">
+                                                        تغییر در رمز و یا شماره تلفن همراه خود را دارید و یا اینکه کد
+                                                        ملی شما در
+                                                        سامانه ثبت نشده است
+                                                    </span>
+                                                    لطفا با شماره زیر تماس بگیرد:
+                                                </p>
+                                                <p class="mt-3">
+                                                    <span class="d-block p-2">
+                                                        شماره داخلی 6635
+                                                        <br />
+                                                        خارج از دانشگاه
+                                                        <span dir="ltr"> 051-38806635 </span>
+                                                    </span>
+                                                </p>
+                                            </div>
 
-                            </div>
-                            <div class="col-12">
-                                <div style="font-size: 11px;">
-                                    هر گونه سوء استفاده از این سایت به استناد
-                                    <a class="border-bottom" style="font-size: 11px;"
-                                       href="http://ict.um.ac.ir/index.php?option=com_content&amp;view=article&amp;id=90&amp;Itemid=284"
-                                       target="_blank">
-                                        آیین نامه تخلفات رایانه ای </a> تحت پیگرد قانونی قرار خواهد گرفت.
+                                            <div class="carousel-item">
+                                                <span class="font-weight-bold mb-2 d-block">
+                                                    گزارش خطا (تیکتینگ)
+                                                </span>
+                                                <p>
+                                                    <i class="fa fa-hand-point-left"></i>
+                                                    در صورتیکه با خطایی در سامانه ها برخورد کردید یا ابهامی در استفاده
+                                                    داشتید از طریق لینک <span class="text-warning">تیکت (گزارش
+                                                        خطا)</span>
+                                                    که در گوشه بالا-چپ سامانه ها قرار دارد، مطلب خود را ارسال و پاسخ را
+                                                    از
+                                                    همان مسیر پیگیری کنید.
+                                                </p>
+                                            </div>
+                                            <div class="carousel-item">
+                                                <span class="font-weight-bold mb-2 d-block">
+                                                    نظام پیشنهادها
+                                                </span>
+                                                <p>
+                                                    <i class="fa fa-hand-point-left"></i>
+                                                    با مراجعه به <span class="text-warning">پورتال پویا/ لبه توسعه
+                                                        منابع/ تحول سازمانی/ ارائه پیشنهاد</span>
+                                                    پیشنهادات خود را برای بهبود سامانه ها یا خدمات فاوای دانشگاه ارسال
+                                                    نمایید.
+                                                </p>
+                                            </div>
+                                            <div class="carousel-item">
+                                                <span class="font-weight-bold mb-2 d-block">
+                                                    درخواست توسعه
+                                                </span>
+                                                <p>
+                                                    <i class="fa fa-hand-point-left"></i>
+                                                    درخواست طراحی یا تغییر سامانه ها بر اساس شیوه نامه بهبود فرآیندهای
+                                                    دانشگاه مندرج در منو <a class="text-warning"
+                                                        href="http://ict.um.ac.ir/index.php?option=com_content&view=category&id=50&Itemid=377&lang=fa"
+                                                        target="_blank">دستورالعملها و فرآیندها/ نرم
+                                                        افزار</a> سایت
+                                                    <a href="http://ict.um.ac.ir/" target="_blank"
+                                                        class="text-warning">ict.um.ac.ir</a>
+                                                    انجام می شود.
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <!-- Indicators -->
+                                        <ul class="carousel-indicators">
+                                            <li data-target="#msgSlides" data-slide-to="0" class="active"></li>
+                                            <li data-target="#msgSlides" data-slide-to="1"></li>
+                                            <li data-target="#msgSlides" data-slide-to="2"></li>
+                                            <li data-target="#msgSlides" data-slide-to="3"></li>
+                                            <li data-target="#msgSlides" data-slide-to="4"></li>
+                                        </ul>
+
+                                    </div>
                                 </div>
-                                <div style="font-size: 11px;">
-                                    مركز فناوری اطلاعات و ارتباطات دانشگاه فردوسی مشهد
-                                    <br>
-                                    1381-1401
+                            </div>
+                            <div class="row text-center py-2 h-50 align-content-end ">
+                                <div class="col-12 mb-2">
+
+                                </div>
+                                <div class="col-12">
+                                    <div style="font-size: 11px;">
+                                        هر گونه سوء استفاده از این سایت به استناد
+                                        <a class="border-bottom" style="font-size: 11px;"
+                                            href="http://ict.um.ac.ir/index.php?option=com_content&amp;view=article&amp;id=90&amp;Itemid=284"
+                                            target="_blank">
+                                            آیین نامه تخلفات رایانه ای </a> تحت پیگرد قانونی قرار خواهد گرفت.
+                                    </div>
+                                    <div style="font-size: 11px;">
+                                        مركز فناوری اطلاعات و ارتباطات دانشگاه فردوسی مشهد
+                                        <br>
+                                        1381-1401
+                                    </div>
                                 </div>
                             </div>
+
                         </div>
-
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    </div>
-</main>
+        </div>
+    </main>
 
-<script type="text/javascript">
-    fum.util.password.pasData = document.getElementById('DummyVar');
-    fum.util.password.uidData = document.getElementById('UserID');
-</script>
+    <script type="text/javascript">
+        fum.util.password.pasData = document.getElementById('DummyVar');
+        fum.util.password.uidData = document.getElementById('UserID');
+    </script>
 
 </body>
+
 </html>

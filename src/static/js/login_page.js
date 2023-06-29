@@ -38,7 +38,6 @@ function RefreshCaptcha() {
      }
      fum.util.password.checkPass();
      FormObj.pswdStatus.value = fum.util.password.result;
-    // FormObj.UserPassword.value = md5.getmd5(FormObj.DummyVar.value);
      FormObj.UserPassword.value = FormObj.DummyVar.value;
      FormObj.DummyVar.value = '';
      return true;

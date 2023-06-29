@@ -1,4 +1,5 @@
 <html lang="fa">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,98 +13,101 @@
     <script src="../static/js/bootstrap-4.2.1.min.js"></script>
     <script src="../static/js/user_recovery_pass.js"></script>
 
-
-
 </head>
+
 <body dir="rtl">
-<main class="d-flex align-items-center min-vh-100 py-3 py-md-0">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-7 mx-auto">
-                <div class="login-card row bg-light shadow mx-2">
-                    <div class="col p-4 pt-5 align-self-center">
-                        <h1 class="text-center">
-                            <a href="https://www.um.ac.ir" target="_blank" title="دانشگاه فردوسی مشهد">
-                                <img class="fum-logo" src="../static/images/fum-logo.png">
-                            </a>
-                        </h1>
-                        <h2 class="text-center my-3">
-                        <span>
-                            پرتال ورود یکپارچه اعضا <br> <br>پروژه دانشگاهی <br> <br> نام گروه : ?
-                        </span>
-                        </h2>
-                        <h3 class="text-center my-3">
-                        <span>
-                        بازیابی رمز عبور
-                        </span>
-                        </h3>
-					    <form name="RecoveryPassForm" id="RecoveryPassForm"
-                              action="UserRecoveryPassForm.php.html" method="POST" onSubmit=""
-                              class="login-form px-md-4">
-                            <div class="form-group row">
-                                <div class="col-md-6">
-                                    <div class="input-group pr-1 rounded">
-                                        <input type="text" name="UserID" class="form-control border-0"
-                                               placeholder="شناسه کاربری" required>
-                                        <i class="fa text-secondary fa-user-circle"></i>
+    <main class="d-flex align-items-center min-vh-100 py-3 py-md-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7 mx-auto">
+                    <div class="login-card row bg-light shadow mx-2">
+                        <div class="col p-4 pt-5 align-self-center">
+                            <h1 class="text-center">
+                                <a href="https://www.um.ac.ir" target="_blank" title="دانشگاه فردوسی مشهد">
+                                    <img class="fum-logo" src="../static/images/fum-logo.png">
+                                </a>
+                            </h1>
+                            <h2 class="text-center my-3">
+                                <span>
+                                    پرتال ورود یکپارچه اعضا <br> <br>پروژه دانشگاهی <br> <br> نام گروه
+                                </span>
+                            </h2>
+                            <h3 class="text-center my-3">
+                                <span>
+                                    بازیابی رمز عبور
+                                </span>
+                            </h3>
+                            <form name="RecoveryPassForm" id="RecoveryPassForm" action="UserRecoveryPassForm.php.html"
+                                method="POST" onSubmit="" class="login-form px-md-4">
+                                <div class="form-group row">
+                                    <div class="col-md-6">
+                                        <div class="input-group pr-1 rounded">
+                                            <input type="text" name="UserID" class="form-control border-0"
+                                                placeholder="شناسه کاربری" required>
+                                            <i class="fa text-secondary fa-user-circle"></i>
+                                        </div>
+                                        <p class="help-block">
+                                            <small><a href="StNo_and_pass_recovery.html" tabindex="-1"> فراموشی شماره
+                                                    دانشجویی </a>
+                                            </small>
+                                        </p>
                                     </div>
-                                    <p class="help-block">
-                                        <small><a href="StNo_and_pass_recovery.html" tabindex="-1"> فراموشی شماره دانشجویی </a>
-                                        </small>
-                                    </p>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="input-group pr-1 rounded">
-                                        <input type="text" name="mobile" maxlength="11" class="form-control border-0"
-                                               placeholder="شماره همراه" required>
-                                        <i class="fa text-secondary fa-mobile-alt"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-md-6">
-                                    <div class="input-group pr-1 rounded">
-                                        <input type="text" name="NID" maxlength="10" class="form-control border-0"
-                                               placeholder="کد ملی" >
-                                        <i class="fa text-secondary fa-id-card"></i>
-                                    </div>
-                                    <p class="help-block">
-                                        <span>دانشجویان خارجی نیاز به وارد کردن کد ملی ندارند</span>
-                                    </p>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="input-group pr-1 rounded">
-                                        <input type="text" name="capt" class="form-control border-0"
-                                               placeholder="کد امنیتی" required>
-                                        <i class="fa text-secondary fa-exclamation-circle"></i>
-                                    </div>
-                                    <p class="help-block">
-                                        <span>کد امنیتی به بزرگی و کوچکی حروف حساس است</span>
-                                    </p>
-                                    <div class="capt-img">
-                                        <img id="captImg" name="captImg" src="../static/images/ShowSecurityImage.php@rand=1337222383&rand2=SWVpaUx3SDVvYktRYzBqRkF0SHg1RTJ4ZzJXMGE2YVJvc014L0lWRFlnTT0=">
-                                        <span onclick="document.getElementById('captImg').src = '../educ/exam/ExamCaptcha.php?rand=' + Math.random();">
-                    <i class="fa fa-sync text-dark">🔁</i> 
-                </span>
+                                    <div class="col-md-6">
+                                        <div class="input-group pr-1 rounded">
+                                            <input type="text" name="mobile" maxlength="11"
+                                                class="form-control border-0" placeholder="شماره همراه" required>
+                                            <i class="fa text-secondary fa-mobile-alt"></i>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="form-group row align-items-center">
-                                <div class="col-md-6">
-                                    <button type="submit" class="btn btn-primary btn-block" name="PassRecovery">بازیابی
-                                        رمز عبور
-                                    </button>
+                                <div class="form-group row">
+                                    <div class="col-md-6">
+                                        <div class="input-group pr-1 rounded">
+                                            <input type="text" name="NID" maxlength="10" class="form-control border-0"
+                                                placeholder="کد ملی">
+                                            <i class="fa text-secondary fa-id-card"></i>
+                                        </div>
+                                        <p class="help-block">
+                                            <span>دانشجویان خارجی نیاز به وارد کردن کد ملی ندارند</span>
+                                        </p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="input-group pr-1 rounded">
+                                            <input type="text" name="capt" class="form-control border-0"
+                                                placeholder="کد امنیتی" required>
+                                            <i class="fa text-secondary fa-exclamation-circle"></i>
+                                        </div>
+                                        <p class="help-block">
+                                            <span>کد امنیتی به بزرگی و کوچکی حروف حساس است</span>
+                                        </p>
+                                        <div class="capt-img">
+                                            <img id="captImg" name="captImg"
+                                                src="../static/images/ShowSecurityImage.php@rand=1337222383&rand2=SWVpaUx3SDVvYktRYzBqRkF0SHg1RTJ4ZzJXMGE2YVJvc014L0lWRFlnTT0=">
+                                            <span
+                                                onclick="document.getElementById('captImg').src = '../educ/exam/ExamCaptcha.php?rand=' + Math.random();">
+                                                <i class="fa fa-sync text-dark">🔁</i>
+                                            </span>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <button type="reset" class="btn btn-secondary btn-block">پاک کردن فرم</button>
+                                <div class="form-group row align-items-center">
+                                    <div class="col-md-6">
+                                        <button type="submit" class="btn btn-primary btn-block"
+                                            name="PassRecovery">بازیابی
+                                            رمز عبور
+                                        </button>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <button type="reset" class="btn btn-secondary btn-block">پاک کردن فرم</button>
+                                    </div>
                                 </div>
-                            </div>
-                        </form>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</main>
+    </main>
 </body>
+
 </html>
