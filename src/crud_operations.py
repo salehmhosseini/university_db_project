@@ -23,7 +23,7 @@ drop_table_queries = [
      
      """ ,
      """
-     DROP TABLE IF EXISTS `crud`.`professor` ;
+     DROP TABLE IF EXISTS `professor` ;
 
      """ , 
      """
@@ -144,7 +144,7 @@ CREATE TABLE IF NOT EXISTS `professor` (
     FOREIGN KEY (`department_department_id`)
     REFERENCES `department` (`department_id`)
     ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+    ON UPDATE NO ACTION);
 """ ,
 """ 
 CREATE TABLE IF NOT EXISTS `food_reservation` (
@@ -153,7 +153,7 @@ CREATE TABLE IF NOT EXISTS `food_reservation` (
   `food_reservation_type` VARCHAR(45) NULL,
   `food_reservation_resturant` VARCHAR(20) NULL,
   `food_food_name` VARCHAR(20) NULL,
-  PRIMARY KEY (`food_reservation_id`))
+  PRIMARY KEY (`food_reservation_id`));
   
 """ , 
 """ 
@@ -187,14 +187,15 @@ CREATE TABLE IF NOT EXISTS `student` (
     FOREIGN KEY (`food_reservation_food_reservation_id`)
     REFERENCES `food_reservation` (`food_reservation_id`)
     ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+    ON UPDATE NO ACTION);
 """
+,
 """
 CREATE TABLE IF NOT EXISTS `final_exam` (
   `final_exam_date` VARCHAR(45) NOT NULL,
   `final_exam_description` VARCHAR(45) NULL,
   `final_exam_id` INT NOT NULL,
-  PRIMARY KEY (`final_exam_id`))
+  PRIMARY KEY (`final_exam_id`));
 """,
 """
 CREATE TABLE IF NOT EXISTS`course` (
@@ -207,27 +208,27 @@ CREATE TABLE IF NOT EXISTS`course` (
     FOREIGN KEY (`final_exam_final_exam_id`)
     REFERENCES `final_exam` (`final_exam_id`)
     ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+    ON UPDATE NO ACTION);
 """,
 """
 CREATE TABLE IF NOT EXISTS `classroom` (
   `classroom_id` INT NOT NULL,
   `classroom_number` VARCHAR(10) NOT NULL,
-  PRIMARY KEY (`classroom_id`))
+  PRIMARY KEY (`classroom_id`));
 """,
 """
 CREATE TABLE IF NOT EXISTS `semester` (
   `Semester_id` INT NOT NULL,
   `Semester_year` INT NULL,
   `semester_term` INT NULL,
-  PRIMARY KEY (`Semester_id`))
+  PRIMARY KEY (`Semester_id`));
 """,
 """
 CREATE TABLE IF NOT EXISTS `sessions_time` (
   `sessions_time_id` INT NOT NULL,
-  `session_day_of_week` VARCHAR(45) NULL,
+  `sessions_day_of_week` VARCHAR(45) NULL,
   `sessions_time` INT NULL,
-  PRIMARY KEY (`sessions_time_id`))
+  PRIMARY KEY (`sessions_time_id`));
 """,
 """
 CREATE TABLE IF NOT EXISTS `sessions` (
@@ -272,7 +273,7 @@ CREATE TABLE IF NOT EXISTS `sessions` (
     FOREIGN KEY (`sessions_time_sessions_time_id`)
     REFERENCES `sessions_time` (`sessions_time_id`)
     ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+    ON UPDATE NO ACTION);
 """,
 """
 CREATE TABLE IF NOT EXISTS `library` (
@@ -281,7 +282,7 @@ CREATE TABLE IF NOT EXISTS `library` (
   `library_no_of_employees` INT NULL,
   `library_established_year` YEAR NULL,
   `library_id` INT NOT NULL,
-  PRIMARY KEY (`library_id`))
+  PRIMARY KEY (`library_id`));
 """,
 """
 CREATE TABLE IF NOT EXISTS `student_activity` (
@@ -289,7 +290,7 @@ CREATE TABLE IF NOT EXISTS `student_activity` (
   `activity_name` VARCHAR(20) NOT NULL,
   `date_started` VARCHAR(45) NULL,
   `date_ended` VARCHAR(45) NULL,
-  PRIMARY KEY (`activity_id`))
+  PRIMARY KEY (`activity_id`));
 """,
 """
 CREATE TABLE IF NOT EXISTS `book_reservation` (
@@ -302,7 +303,7 @@ CREATE TABLE IF NOT EXISTS `book_reservation` (
     FOREIGN KEY (`student_student_id`)
     REFERENCES `student` (`student_id`)
     ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+    ON UPDATE NO ACTION);
 """,
 """
 CREATE TABLE IF NOT EXISTS `book` (
@@ -323,7 +324,7 @@ CREATE TABLE IF NOT EXISTS `book` (
     FOREIGN KEY (`book_reservation_book_reservation_id`)
     REFERENCES `book_reservation` (`book_reservation_id`)
     ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+    ON UPDATE NO ACTION);
 """,
 """
 CREATE TABLE IF NOT EXISTS `lab` (
@@ -336,7 +337,7 @@ CREATE TABLE IF NOT EXISTS `lab` (
     FOREIGN KEY (`professor_prof_id`)
     REFERENCES `professor` (`prof_id`)
     ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+    ON UPDATE NO ACTION);
 """,
 """
 CREATE TABLE IF NOT EXISTS `paper` (
@@ -348,7 +349,7 @@ CREATE TABLE IF NOT EXISTS `paper` (
     FOREIGN KEY (`professor_prof_id`)
     REFERENCES `professor` (`prof_id`)
     ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+    ON UPDATE NO ACTION);
 """,
 """
 CREATE TABLE IF NOT EXISTS `activity_of_student` (
@@ -364,7 +365,7 @@ CREATE TABLE IF NOT EXISTS `activity_of_student` (
     FOREIGN KEY (`student_activity_activity_id`)
     REFERENCES `student_activity` (`activity_id`)
     ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+    ON UPDATE NO ACTION);
 """,
 """
 CREATE TABLE IF NOT EXISTS `student_has_sessions` (
@@ -394,7 +395,7 @@ CREATE TABLE IF NOT EXISTS `student_has_sessions` (
     FOREIGN KEY (`sessions_classroom_classroom_id` , `sessions_course_course_id` , `sessions_sessions_id` , `sessions_department_department_id` , `sessions_professor_prof_id` , `sessions_semester_Semester_id` , `sessions_sessions_time_sessions_time_id`)
     REFERENCES `sessions` (`classroom_classroom_id` , `course_course_id` , `sessions_id` , `department_department_id` , `professor_prof_id` , `semester_Semester_id` , `sessions_time_sessions_time_id`)
     ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+    ON UPDATE NO ACTION);
 """
 ]
 
@@ -429,10 +430,10 @@ index_queries = [
     CREATE UNIQUE INDEX IF NOT EXISTS `prof_phone_UNIQUE` ON `professor` (`prof_phone_number` ASC) ;
     """ , 
     """
-     CREATE UNIQUE INDEX IF NOT EXISTS `prof_email_UNIQUE` ON `professor` (`prof_email` ASC) ;
-     """ ,
+    CREATE UNIQUE INDEX IF NOT EXISTS `prof_email_UNIQUE` ON `professor` (`prof_email` ASC) ;
+    """ ,
      """
-     CREATE UNIQUE INDEX IF NOT EXISTS `prof_id_UNIQUE` ON `professor` (`prof_id` ASC) 
+     CREATE UNIQUE INDEX IF NOT EXISTS `prof_id_UNIQUE` ON `professor` (`prof_id` ASC) ;
      """ , 
      """
      CREATE INDEX IF NOT EXISTS `fk_professor_department1_idx` ON `professor` (`department_department_id` ASC) ;
@@ -449,57 +450,58 @@ index_queries = [
      """
      CREATE INDEX IF NOT EXISTS `fk_student_food_reservation1_idx` ON `student` (`food_reservation_food_reservation_id` ASC) ;
      """
+         ,
      """
-     CREATE INDEX IF NOT EXISTS `fk_Course_Final_Exam1_idx` ON ``course` (`final_exam_final_exam_id` ASC) VISIBLE) ;
+     CREATE INDEX IF NOT EXISTS `fk_Course_Final_Exam1_idx` ON `course` (`final_exam_final_exam_id` ASC) ;
      """,
      """
-     CREATE UNIQUE INDEX IF NOT EXISTS `course_id_UNIQUE` ON `course` (`course_id` ASC) VISIBLE) ;
+     CREATE UNIQUE INDEX IF NOT EXISTS `course_id_UNIQUE` ON `course` (`course_id` ASC)  ;
      """,
      """
-     CREATE UNIQUE INDEX IF NOT EXISTS `classroom_id_UNIQUE` ON `classroom` (`classroom_id` ASC) VISIBLE) ;
+     CREATE UNIQUE INDEX IF NOT EXISTS `classroom_id_UNIQUE` ON `classroom` (`classroom_id` ASC)  ;
      """,
      """
-     CREATE INDEX IF NOT EXISTS `fk_Sessions_classroom1_idx` ON `sessions` (`classroom_classroom_id` ASC) VISIBLE) ;
+     CREATE INDEX IF NOT EXISTS `fk_Sessions_classroom1_idx` ON `sessions` (`classroom_classroom_id` ASC)  ;
      """,
      """
-     CREATE INDEX IF NOT EXISTS `fk_Sessions_Course1_idx` ON `sessions` (`course_course_id` ASC) VISIBLE );
+     CREATE INDEX IF NOT EXISTS `fk_Sessions_Course1_idx` ON `sessions` (`course_course_id` ASC)  ;
      """,
      """
-     CREATE INDEX IF NOT EXISTS `fk_sessions_department1_idx` ON `sessions` (`department_department_id` ASC) VISIBLE) ;
+     CREATE INDEX IF NOT EXISTS `fk_sessions_department1_idx` ON `sessions` (`department_department_id` ASC)  ;
      """,
      """
-     CREATE INDEX IF NOT EXISTS `fk_sessions_professor1_idx` ON `sessions` (`professor_prof_id` ASC) VISIBLE) ;
+     CREATE INDEX IF NOT EXISTS `fk_sessions_professor1_idx` ON `sessions` (`professor_prof_id` ASC)  ;
      """,
      """
-     CREATE INDEX IF NOT EXISTS `fk_sessions_semester1_idx` ON `sessions` (`semester_Semester_id` ASC) VISIBLE) ;
+     CREATE INDEX IF NOT EXISTS `fk_sessions_semester1_idx` ON `sessions` (`semester_Semester_id` ASC)  ;
      """,
      """
-     CREATE INDEX IF NOT EXISTS `fk_sessions_sessions_time1_idx` ON `sessions` (`sessions_time_sessions_time_id` ASC) VISIBLE) ;
+     CREATE INDEX IF NOT EXISTS `fk_sessions_sessions_time1_idx` ON `sessions` (`sessions_time_sessions_time_id` ASC)  ;
      """,
      """
-     CREATE INDEX IF NOT EXISTS `fk_book_reservation_student1_idx` ON `book_reservation` (`student_student_id` ASC) VISIBLE) ;
+     CREATE INDEX IF NOT EXISTS `fk_book_reservation_student1_idx` ON `book_reservation` (`student_student_id` ASC)  ;
      """,
      """
-     CREATE INDEX IF NOT EXISTS `fk_book_library1_idx` ON `book` (`library_library_id` ASC) VISIBLE) ;
+     CREATE INDEX IF NOT EXISTS `fk_book_library1_idx` ON `book` (`library_library_id` ASC)  ;
      """,
      """
-     CREATE INDEX IF NOT EXISTS `fk_book_book_reservation1_idx` ON `book` (`book_reservation_book_reservation_id` ASC) VISIBLE) ;
+     CREATE INDEX IF NOT EXISTS `fk_book_book_reservation1_idx` ON `book` (`book_reservation_book_reservation_id` ASC)  ;
      """,
      """
-     CREATE INDEX IF NOT EXISTS `fk_lab_professor1_idx` ON `lab` (`professor_prof_id` ASC) VISIBLE) ;
+     CREATE INDEX IF NOT EXISTS `fk_lab_professor1_idx` ON `lab` (`professor_prof_id` ASC)  ;
      """,
      """
-     CREATE INDEX IF NOT EXISTS `fk_paper_professor1_idx` ON `paper` (`professor_prof_id` ASC) VISIBLE) ;
+     CREATE INDEX IF NOT EXISTS `fk_paper_professor1_idx` ON `paper` (`professor_prof_id` ASC)  ;
      """,
      """
-     CREATE INDEX IF NOT EXISTS `fk_activity_of_student_student_activity1_idx` ON `activity_of_student` (`student_activity_activity_id` ASC) VISIBLE) ;
+     CREATE INDEX IF NOT EXISTS `fk_activity_of_student_student_activity1_idx` ON `activity_of_student` (`student_activity_activity_id` ASC)  ;
      """,
      """
-     CREATE INDEX IF NOT EXISTS `fk_student_has_sessions_student1_idx` ON `student_has_sessions` (`student_student_id` ASC, `student_professor_prof_id` ASC, `student_food_reservation_food_reservation_id` ASC) VISIBLE) ;
+     CREATE INDEX IF NOT EXISTS `fk_student_has_sessions_student1_idx` ON `student_has_sessions` (`student_student_id` ASC, `student_professor_prof_id` ASC, `student_food_reservation_food_reservation_id` ASC)  ;
      """,
      """
-     CREATE INDEX IF NOT EXISTS `fk_student_has_sessions_sessions1_idx` ON `student_has_sessions` (`sessions_classroom_classroom_id` ASC, `sessions_course_course_id` ASC, `sessions_sessions_id` ASC, `sessions_department_department_id` ASC, `sessions_professor_prof_id` ASC, `sessions_semester_Semester_id` ASC, `sessions_sessions_time_sessions_time_id` ASC) VISIBLE) ;
-     """,
+     CREATE INDEX IF NOT EXISTS `fk_student_has_sessions_sessions1_idx` ON `student_has_sessions` (`sessions_classroom_classroom_id` ASC, `sessions_course_course_id` ASC, `sessions_sessions_id` ASC, `sessions_department_department_id` ASC, `sessions_professor_prof_id` ASC, `sessions_semester_Semester_id` ASC, `sessions_sessions_time_sessions_time_id` ASC)  ;
+     """
 ]
 
 # Execute the index queries
@@ -701,7 +703,7 @@ VALUES (
 """
 INSERT INTO `course` (
 `course_id`,
-`course_name`.
+`course_name`,
 `course_no_of_unit`,
 `final_exam_final_exam_id`
 )
@@ -808,7 +810,7 @@ VALUES (
 INSERT INTO `book_reservation` (
 `book_reservation_time_domain`,
 `book_reservation_id`,
-`book_reservation_data`,
+`book_reservation_date`,
 `student_student_id`
 )
 VALUES (
