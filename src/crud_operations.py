@@ -134,6 +134,214 @@ CREATE TABLE IF NOT EXISTS `student` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 """
+"""
+CREATE TABLE IF NOT EXISTS `final_exam` (
+  `final_exam_date` VARCHAR(45) NOT NULL,
+  `final_exam_description` VARCHAR(45) NULL,
+  `final_exam_id` INT NOT NULL,
+  PRIMARY KEY (`final_exam_id`))
+""",
+"""
+CREATE TABLE IF NOT EXISTS`course` (
+  `course_id` INT NOT NULL,
+  `course_name` VARCHAR(20) NOT NULL,
+  `course_no_of_unit` INT UNSIGNED NOT NULL,
+  `final_exam_final_exam_id` INT NOT NULL,
+  PRIMARY KEY (`course_id`, `final_exam_final_exam_id`),
+  CONSTRAINT `fk_Course_Final_Exam1`
+    FOREIGN KEY (`final_exam_final_exam_id`)
+    REFERENCES `final_exam` (`final_exam_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+""",
+"""
+CREATE TABLE IF NOT EXISTS `classroom` (
+  `classroom_id` INT NOT NULL,
+  `classroom_number` VARCHAR(10) NOT NULL,
+  `classroom_building` VARCHAR(45) NULL,
+  PRIMARY KEY (`classroom_id`))
+""",
+"""
+CREATE TABLE IF NOT EXISTS `semester` (
+  `Semester_id` INT NOT NULL,
+  `Semester_year` INT NULL,
+  `semester_term` INT NULL,
+  PRIMARY KEY (`Semester_id`))
+""",
+"""
+CREATE TABLE IF NOT EXISTS `sessions_time` (
+  `sessions_time_id` INT NOT NULL,
+  `session_day_of_week` VARCHAR(45) NULL,
+  `sessions_time` INT NULL,
+  PRIMARY KEY (`sessions_time_id`))
+""",
+"""
+CREATE TABLE IF NOT EXISTS `sessions` (
+  `sessions_id` INT NOT NULL,
+  `sessions_no_of_student` INT NULL,
+  `sessions_capacity` INT NULL,
+  `sessions_description` VARCHAR(45) NULL,
+  `classroom_classroom_id` INT NOT NULL,
+  `course_course_id` INT NOT NULL,
+  `department_department_id` INT NOT NULL,
+  `professor_prof_id` INT NOT NULL,
+  `sessions_mark` INT NULL,
+  `semester_Semester_id` INT NOT NULL,
+  `sessions_time_sessions_time_id` INT NOT NULL,
+  PRIMARY KEY (`classroom_classroom_id`, `course_course_id`, `sessions_id`, `department_department_id`, `professor_prof_id`, `semester_Semester_id`, `sessions_time_sessions_time_id`),
+  CONSTRAINT `fk_Sessions_classroom1`
+    FOREIGN KEY (`classroom_classroom_id`)
+    REFERENCES `classroom` (`classroom_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Sessions_Course1`
+    FOREIGN KEY (`course_course_id`)
+    REFERENCES `course` (`course_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_sessions_department1`
+    FOREIGN KEY (`department_department_id`)
+    REFERENCES `department` (`department_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_sessions_professor1`
+    FOREIGN KEY (`professor_prof_id`)
+    REFERENCES `professor` (`prof_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_sessions_semester1`
+    FOREIGN KEY (`semester_Semester_id`)
+    REFERENCES `semester` (`Semester_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_sessions_sessions_time1`
+    FOREIGN KEY (`sessions_time_sessions_time_id`)
+    REFERENCES `sessions_time` (`sessions_time_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+""",
+"""
+CREATE TABLE IF NOT EXISTS `library` (
+  `library_no_of_books` INT NULL,
+  `library_name` VARCHAR(45) NOT NULL,
+  `library_no_of_employees` INT NULL,
+  `library_established_year` YEAR NULL,
+  `library_id` INT NOT NULL,
+  PRIMARY KEY (`library_id`))
+""",
+"""
+CREATE TABLE IF NOT EXISTS `student_activity` (
+  `activity_id` INT NOT NULL,
+  `activity_name` VARCHAR(20) NOT NULL,
+  `date_started` DATE NULL,
+  `date_ended` DATE NULL,
+  PRIMARY KEY (`activity_id`))
+""",
+"""
+CREATE TABLE IF NOT EXISTS `book_reservation` (
+  `book_reservation_time_domain` INT NULL,
+  `book_reservation_id` INT NOT NULL,
+  `book_reservation_date` DATE NULL,
+  `student_student_id` INT NOT NULL,
+  PRIMARY KEY (`book_reservation_id`, `student_student_id`),
+  CONSTRAINT `fk_book_reservation_student1`
+    FOREIGN KEY (`student_student_id`)
+    REFERENCES `student` (`student_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+""",
+"""
+CREATE TABLE IF NOT EXISTS `book` (
+  `book_name` VARCHAR(20) NOT NULL,
+  `book_id` INT NOT NULL,
+  `aouthor` VARCHAR(45) NOT NULL,
+  `publisher` VARCHAR(45) NULL,
+  `publication_date` DATE NULL,
+  `library_library_id` INT NOT NULL,
+  `book_reservation_book_reservation_id` INT NOT NULL,
+  PRIMARY KEY (`book_id`, `library_library_id`, `book_reservation_book_reservation_id`),
+  CONSTRAINT `fk_book_library1`
+    FOREIGN KEY (`library_library_id`)
+    REFERENCES `library` (`library_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_book_book_reservation1`
+    FOREIGN KEY (`book_reservation_book_reservation_id`)
+    REFERENCES `book_reservation` (`book_reservation_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+""",
+"""
+CREATE TABLE IF NOT EXISTS `lab` (
+  `lab_lab_name` VARCHAR(20) NOT NULL,
+  `lab_reasercher_nomber` INT NOT NULL,
+  `lab_description` VARCHAR(60) NOT NULL,
+  `professor_prof_id` INT NOT NULL,
+  PRIMARY KEY (`lab_lab_name`, `professor_prof_id`),
+  CONSTRAINT `fk_lab_professor1`
+    FOREIGN KEY (`professor_prof_id`)
+    REFERENCES `professor` (`prof_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+""",
+"""
+CREATE TABLE IF NOT EXISTS `paper` (
+  `paper_paper_id` INT NOT NULL,
+  `paper_paper_title` VARCHAR(45) NULL,
+  `professor_prof_id` INT NOT NULL,
+  PRIMARY KEY (`paper_paper_id`, `professor_prof_id`),
+  CONSTRAINT `fk_paper_professor1`
+    FOREIGN KEY (`professor_prof_id`)
+    REFERENCES `professor` (`prof_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+""",
+"""
+CREATE TABLE IF NOT EXISTS `activity_of_student` (
+  `student_student_id` INT NOT NULL,
+  `student_activity_activity_id` INT NOT NULL,
+  PRIMARY KEY (`student_student_id`, `student_activity_activity_id`),
+  CONSTRAINT `fk_activity_of_student_student1`
+    FOREIGN KEY (`student_student_id`)
+    REFERENCES `student` (`student_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_activity_of_student_student_activity1`
+    FOREIGN KEY (`student_activity_activity_id`)
+    REFERENCES `student_activity` (`activity_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+""",
+"""
+REATE TABLE IF NOT EXISTS `student_has_sessions` (
+  `student_has_sessions_id` INT NOT NULL,
+  `shs_mark` FLOAT NULL,
+  `shs_sign` TINYINT(1) NOT NULL,
+  `shs_session_mark` FLOAT NULL,
+  `shs_absence_number` INT NULL,
+  `shs_is_current` TINYINT(1) NULL,
+  `student_student_id` INT NOT NULL,
+  `student_professor_prof_id` INT NOT NULL,
+  `student_food_reservation_food_reservation_id` INT NOT NULL,
+  `sessions_classroom_classroom_id` INT NOT NULL,
+  `sessions_course_course_id` INT NOT NULL,
+  `sessions_sessions_id` INT NOT NULL,
+  `sessions_department_department_id` INT NOT NULL,
+  `sessions_professor_prof_id` INT NOT NULL,
+  `sessions_semester_Semester_id` INT NOT NULL,
+  `sessions_sessions_time_sessions_time_id` INT NOT NULL,
+  PRIMARY KEY (`student_has_sessions_id`, `student_student_id`, `student_professor_prof_id`, `student_food_reservation_food_reservation_id`, `sessions_classroom_classroom_id`, `sessions_course_course_id`, `sessions_sessions_id`, `sessions_department_department_id`, `sessions_professor_prof_id`, `sessions_semester_Semester_id`, `sessions_sessions_time_sessions_time_id`),
+  CONSTRAINT `fk_student_has_sessions_student1`
+    FOREIGN KEY (`student_student_id` , `student_professor_prof_id` , `student_food_reservation_food_reservation_id`)
+    REFERENCES `student` (`student_id` , `professor_prof_id` , `food_reservation_food_reservation_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_student_has_sessions_sessions1`
+    FOREIGN KEY (`sessions_classroom_classroom_id` , `sessions_course_course_id` , `sessions_sessions_id` , `sessions_department_department_id` , `sessions_professor_prof_id` , `sessions_semester_Semester_id` , `sessions_sessions_time_sessions_time_id`)
+    REFERENCES `sessions` (`classroom_classroom_id` , `course_course_id` , `sessions_id` , `department_department_id` , `professor_prof_id` , `semester_Semester_id` , `sessions_time_sessions_time_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+"""
 ]
 
 # Execute the create table queries
@@ -187,6 +395,57 @@ index_queries = [
      """
      CREATE INDEX IF NOT EXISTS `fk_student_food_reservation1_idx` ON `student` (`food_reservation_food_reservation_id` ASC) ;
      """
+     """
+     CREATE INDEX `fk_Course_Final_Exam1_idx` ON ``course` (`final_exam_final_exam_id` ASC) VISIBLE) ;
+     """,
+     """
+     CREATE UNIQUE INDEX `course_id_UNIQUE` ON `course` (`course_id` ASC) VISIBLE) ;
+     """,
+     """
+     CREATE UNIQUE INDEX `classroom_id_UNIQUE` ON `classroom` (`classroom_id` ASC) VISIBLE) ;
+     """,
+     """
+     CREATE INDEX `fk_Sessions_classroom1_idx` ON `sessions` (`classroom_classroom_id` ASC) VISIBLE) ;
+     """,
+     """
+     CREATE INDEX `fk_Sessions_Course1_idx` ON `sessions` (`course_course_id` ASC) VISIBLE );
+     """,
+     """
+     CREATE INDEX `fk_sessions_department1_idx` ON `sessions` (`department_department_id` ASC) VISIBLE) ;
+     """,
+     """
+     CREATE INDEX `fk_sessions_professor1_idx` ON `sessions` (`professor_prof_id` ASC) VISIBLE) ;
+     """,
+     """
+     CREATE INDEX `fk_sessions_semester1_idx` ON `sessions` (`semester_Semester_id` ASC) VISIBLE) ;
+     """,
+     """
+     CREATE INDEX `fk_sessions_sessions_time1_idx` ON `sessions` (`sessions_time_sessions_time_id` ASC) VISIBLE) ;
+     """,
+     """
+     CREATE INDEX `fk_book_reservation_student1_idx` ON `book_reservation` (`student_student_id` ASC) VISIBLE) ;
+     """,
+     """
+     CREATE INDEX `fk_book_library1_idx` ON `book` (`library_library_id` ASC) VISIBLE) ;
+     """,
+     """
+     CREATE INDEX `fk_book_book_reservation1_idx` ON `book` (`book_reservation_book_reservation_id` ASC) VISIBLE) ;
+     """,
+     """
+     CREATE INDEX `fk_lab_professor1_idx` ON `lab` (`professor_prof_id` ASC) VISIBLE) ;
+     """,
+     """
+     CREATE INDEX `fk_paper_professor1_idx` ON `paper` (`professor_prof_id` ASC) VISIBLE) ;
+     """,
+     """
+     CREATE INDEX `fk_activity_of_student_student_activity1_idx` ON `activity_of_student` (`student_activity_activity_id` ASC) VISIBLE) ;
+     """,
+     """
+     CREATE INDEX `fk_student_has_sessions_student1_idx` ON `student_has_sessions` (`student_student_id` ASC, `student_professor_prof_id` ASC, `student_food_reservation_food_reservation_id` ASC) VISIBLE) ;
+     """,
+     """
+     CREATE INDEX `fk_student_has_sessions_sessions1_idx` ON `student_has_sessions` (`sessions_classroom_classroom_id` ASC, `sessions_course_course_id` ASC, `sessions_sessions_id` ASC, `sessions_department_department_id` ASC, `sessions_professor_prof_id` ASC, `sessions_semester_Semester_id` ASC, `sessions_sessions_time_sessions_time_id` ASC) VISIBLE) ;
+     """,
 ]
 
 # Execute the index queries
