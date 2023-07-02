@@ -346,24 +346,81 @@ for query in insert_queries:
      # Execute the INSERT query
      cursor.execute(query)
 
-#TODO add new tables into select_queryies list
+#TODO add new tables into select_queryies list: done
 # SELECT queries
 # Define the SELECT query
-select_queryies =[ """
-SELECT *
-FROM `department`;
-""" , 
-""" 
-SELECT *
-FROM `professor`;
-""" , 
+select_queryies =[
 """SELECT *
+FROM `department`;
+""" ,
+
+""" SELECT *
+FROM `professor`;
+""" ,
+
+""" SELECT *
 FROM `food_reservation`;
 """ ,
 
 """SELECT *
 FROM `student`;
-""" 
+""" ,
+
+"""SELECT *
+FROM `final_exam`;
+""" ,
+
+"""SELECT *
+FROM `course`;
+""" ,
+
+"""SELECT *
+FROM  `classroom`;
+""" ,
+
+"""SELECT *
+FROM `semester`;
+""" ,
+
+"""SELECT *
+FROM `sessions_time`;
+""" ,
+
+"""SELECT *
+FROM `sessions`;
+""" ,
+
+"""SELECT *
+FROM `library`;
+""" ,
+
+"""SELECT *
+FROM `student_activity`;
+""" ,
+
+"""SELECT *
+FROM `book_reservation`;
+""" ,
+
+"""SELECT *
+FROM `book`;
+""" ,
+
+"""SELECT *
+FROM `lab`;
+""" ,
+
+"""SELECT *
+FROM `paper`;
+""" ,
+
+"""SELECT *
+FROM `activity_of_student`;
+""" ,
+
+"""SELECT *
+FROM `student_has_sessions`;
+"""
 
 ]
 
