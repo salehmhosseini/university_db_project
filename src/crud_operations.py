@@ -15,7 +15,7 @@ conn = sqlite3.connect('crud.db')
 # Create a cursor object to execute SQL queries
 cursor = conn.cursor()
 
-# TODO add other drop table statements into drop_table_queries list 
+# TODO add other drop table statements into drop_table_queries list  --> DON
 # Define the drop table queries
 drop_table_queries = [
      """
@@ -33,7 +33,63 @@ drop_table_queries = [
      """
      DROP TABLE IF EXISTS `student` ;
 
+     """,
      """
+     DROP TABLE IF EXISTS `final_exam` ;
+     
+     """ ,
+     """
+     DROP TABLE IF EXISTS `course` ;
+
+     """ , 
+     """
+     DROP TABLE IF EXISTS `classroom` ;
+
+     """ , 
+     """
+     DROP TABLE IF EXISTS `semester` ;
+
+     """,
+     """
+     DROP TABLE IF EXISTS `sessions_time` ;
+     
+     """ ,
+     """
+     DROP TABLE IF EXISTS `sessions` ;
+
+     """ , 
+     """
+     DROP TABLE IF EXISTS `library` ;
+
+     """ , 
+     """
+     DROP TABLE IF EXISTS `student_activity` ;
+
+     """,
+     """
+     DROP TABLE IF EXISTS `book_resevation` ;
+
+     """ , 
+     """
+     DROP TABLE IF EXISTS `book` ;
+
+     """,
+     """
+     DROP TABLE IF EXISTS `lab` ;
+     
+     """ ,
+     """
+     DROP TABLE IF EXISTS `paper` ;
+
+     """ , 
+     """
+     DROP TABLE IF EXISTS `activity_of_student` ;
+
+     """ , 
+     """
+     DROP TABLE IF EXISTS `student_has_sessions` ;
+
+     """,
 ]
 
 # Execute the drop table queries
