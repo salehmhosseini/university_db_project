@@ -104,7 +104,7 @@ conn.commit()
 print('\n')
 print(GREEN + "There was no problem in dropping the tables" + RESET)
 
-# TODO add other create table statements into create_table_queries list 
+# TODO add other create table statements into create_table_queries list : Done
 # Define the create table query
 create_table_queries = ["""
 CREATE TABLE IF NOT EXISTS `department` (
@@ -367,7 +367,7 @@ CREATE TABLE IF NOT EXISTS `activity_of_student` (
     ON UPDATE NO ACTION)
 """,
 """
-REATE TABLE IF NOT EXISTS `student_has_sessions` (
+CREATE TABLE IF NOT EXISTS `student_has_sessions` (
   `student_has_sessions_id` INT NOT NULL,
   `shs_mark` FLOAT NULL,
   `shs_sign` TINYINT(1) NOT NULL,
@@ -408,8 +408,8 @@ conn.commit()
 # Print a statement indicating successful execution
 print(GREEN +'There was no problem in creating the tables'+RESET)
 
-# TODO add other create index statements into index_queries list
-# TODO add IF NOT EXISTS for all queries that you  add
+# TODO add other create index statements into index_queries list: Done
+# TODO add IF NOT EXISTS for all queries that you  add: Done
 
 # Define the create index queries
 index_queries = [
@@ -450,55 +450,55 @@ index_queries = [
      CREATE INDEX IF NOT EXISTS `fk_student_food_reservation1_idx` ON `student` (`food_reservation_food_reservation_id` ASC) ;
      """
      """
-     CREATE INDEX `fk_Course_Final_Exam1_idx` ON ``course` (`final_exam_final_exam_id` ASC) VISIBLE) ;
+     CREATE INDEX IF NOT EXISTS `fk_Course_Final_Exam1_idx` ON ``course` (`final_exam_final_exam_id` ASC) VISIBLE) ;
      """,
      """
-     CREATE UNIQUE INDEX `course_id_UNIQUE` ON `course` (`course_id` ASC) VISIBLE) ;
+     CREATE UNIQUE INDEX IF NOT EXISTS `course_id_UNIQUE` ON `course` (`course_id` ASC) VISIBLE) ;
      """,
      """
-     CREATE UNIQUE INDEX `classroom_id_UNIQUE` ON `classroom` (`classroom_id` ASC) VISIBLE) ;
+     CREATE UNIQUE INDEX IF NOT EXISTS `classroom_id_UNIQUE` ON `classroom` (`classroom_id` ASC) VISIBLE) ;
      """,
      """
-     CREATE INDEX `fk_Sessions_classroom1_idx` ON `sessions` (`classroom_classroom_id` ASC) VISIBLE) ;
+     CREATE INDEX IF NOT EXISTS `fk_Sessions_classroom1_idx` ON `sessions` (`classroom_classroom_id` ASC) VISIBLE) ;
      """,
      """
-     CREATE INDEX `fk_Sessions_Course1_idx` ON `sessions` (`course_course_id` ASC) VISIBLE );
+     CREATE INDEX IF NOT EXISTS `fk_Sessions_Course1_idx` ON `sessions` (`course_course_id` ASC) VISIBLE );
      """,
      """
-     CREATE INDEX `fk_sessions_department1_idx` ON `sessions` (`department_department_id` ASC) VISIBLE) ;
+     CREATE INDEX IF NOT EXISTS `fk_sessions_department1_idx` ON `sessions` (`department_department_id` ASC) VISIBLE) ;
      """,
      """
-     CREATE INDEX `fk_sessions_professor1_idx` ON `sessions` (`professor_prof_id` ASC) VISIBLE) ;
+     CREATE INDEX IF NOT EXISTS `fk_sessions_professor1_idx` ON `sessions` (`professor_prof_id` ASC) VISIBLE) ;
      """,
      """
-     CREATE INDEX `fk_sessions_semester1_idx` ON `sessions` (`semester_Semester_id` ASC) VISIBLE) ;
+     CREATE INDEX IF NOT EXISTS `fk_sessions_semester1_idx` ON `sessions` (`semester_Semester_id` ASC) VISIBLE) ;
      """,
      """
-     CREATE INDEX `fk_sessions_sessions_time1_idx` ON `sessions` (`sessions_time_sessions_time_id` ASC) VISIBLE) ;
+     CREATE INDEX IF NOT EXISTS `fk_sessions_sessions_time1_idx` ON `sessions` (`sessions_time_sessions_time_id` ASC) VISIBLE) ;
      """,
      """
-     CREATE INDEX `fk_book_reservation_student1_idx` ON `book_reservation` (`student_student_id` ASC) VISIBLE) ;
+     CREATE INDEX IF NOT EXISTS `fk_book_reservation_student1_idx` ON `book_reservation` (`student_student_id` ASC) VISIBLE) ;
      """,
      """
-     CREATE INDEX `fk_book_library1_idx` ON `book` (`library_library_id` ASC) VISIBLE) ;
+     CREATE INDEX IF NOT EXISTS `fk_book_library1_idx` ON `book` (`library_library_id` ASC) VISIBLE) ;
      """,
      """
-     CREATE INDEX `fk_book_book_reservation1_idx` ON `book` (`book_reservation_book_reservation_id` ASC) VISIBLE) ;
+     CREATE INDEX IF NOT EXISTS `fk_book_book_reservation1_idx` ON `book` (`book_reservation_book_reservation_id` ASC) VISIBLE) ;
      """,
      """
-     CREATE INDEX `fk_lab_professor1_idx` ON `lab` (`professor_prof_id` ASC) VISIBLE) ;
+     CREATE INDEX IF NOT EXISTS `fk_lab_professor1_idx` ON `lab` (`professor_prof_id` ASC) VISIBLE) ;
      """,
      """
-     CREATE INDEX `fk_paper_professor1_idx` ON `paper` (`professor_prof_id` ASC) VISIBLE) ;
+     CREATE INDEX IF NOT EXISTS `fk_paper_professor1_idx` ON `paper` (`professor_prof_id` ASC) VISIBLE) ;
      """,
      """
-     CREATE INDEX `fk_activity_of_student_student_activity1_idx` ON `activity_of_student` (`student_activity_activity_id` ASC) VISIBLE) ;
+     CREATE INDEX IF NOT EXISTS `fk_activity_of_student_student_activity1_idx` ON `activity_of_student` (`student_activity_activity_id` ASC) VISIBLE) ;
      """,
      """
-     CREATE INDEX `fk_student_has_sessions_student1_idx` ON `student_has_sessions` (`student_student_id` ASC, `student_professor_prof_id` ASC, `student_food_reservation_food_reservation_id` ASC) VISIBLE) ;
+     CREATE INDEX IF NOT EXISTS `fk_student_has_sessions_student1_idx` ON `student_has_sessions` (`student_student_id` ASC, `student_professor_prof_id` ASC, `student_food_reservation_food_reservation_id` ASC) VISIBLE) ;
      """,
      """
-     CREATE INDEX `fk_student_has_sessions_sessions1_idx` ON `student_has_sessions` (`sessions_classroom_classroom_id` ASC, `sessions_course_course_id` ASC, `sessions_sessions_id` ASC, `sessions_department_department_id` ASC, `sessions_professor_prof_id` ASC, `sessions_semester_Semester_id` ASC, `sessions_sessions_time_sessions_time_id` ASC) VISIBLE) ;
+     CREATE INDEX IF NOT EXISTS `fk_student_has_sessions_sessions1_idx` ON `student_has_sessions` (`sessions_classroom_classroom_id` ASC, `sessions_course_course_id` ASC, `sessions_sessions_id` ASC, `sessions_department_department_id` ASC, `sessions_professor_prof_id` ASC, `sessions_semester_Semester_id` ASC, `sessions_sessions_time_sessions_time_id` ASC) VISIBLE) ;
      """,
 ]
 
@@ -535,7 +535,7 @@ print('\n')
 print(GREEN+'####################'+RESET)
 print(GREEN+'show table informations afer insertion\n'+RESET)
 
-#TODO insert new records into insert_queries list
+#TODO insert new records into insert_queries list: Done
 # insert queries 
 # Define the INSERT query
 insert_queries = ["""
@@ -1256,11 +1256,99 @@ for query in select_queryies:
      print('\n')
 
 # DELETE queries
-#TODO add new delete statements into delete_queries list
-delete_queries =[ """
+#TODO add new delete statements into delete_queries list: Done
+delete_queries =[
+"""
+DELETE FROM `department`
+WHERE `department_id` = 22035;
+"""
+,
+"""
+DELETE FROM `professor`
+WHERE `prof_id` = 202;
+"""
+,
+"""
 DELETE FROM `food_reservation`
 WHERE `food_reservation_id` = 298;
-"""]
+"""
+,
+"""
+DELETE FROM `student`
+WHERE `student_id` = 4001262499;
+"""
+,
+"""
+DELETE FROM `final_exam`
+WHERE `final_exam_id` = 13;
+"""
+,
+"""
+DELETE FROM `course`
+WHERE `course_id` = 11;
+"""
+,
+"""
+DELETE FROM `classroom`
+WHERE `classroom_id` = 37;
+"""
+,
+"""
+DELETE FROM `semester`
+WHERE `semester_id` = 232;
+"""
+,
+"""
+DELETE FROM `sessions_time`
+WHERE `sessions_time_id` = 1;
+"""
+,
+"""
+DELETE FROM `sessions`
+WHERE `sessions_id` = 111;
+"""
+,
+"""
+DELETE FROM `library`
+WHERE `library_id` = 23;
+"""
+,
+"""
+DELETE FROM `student_activity`
+WHERE `activity_id` = 1;
+"""
+,
+"""
+DELETE FROM `book_reservation`
+WHERE `book_reservation_id` = 1;
+"""
+,
+"""
+DELETE FROM `book`
+WHERE `book_id` = 123;
+"""
+,
+"""
+DELETE FROM `lab`
+WHERE `lab_name` = 'lab';
+"""
+,
+"""
+DELETE FROM `paper`
+WHERE `paper_paper_id` = 1010;
+"""
+,
+"""
+DELETE FROM `activity_of_student`
+WHERE `student_student_id` = 4001262499;
+"""
+,
+"""
+DELETE FROM `student_has_sessions`
+WHERE `student_has_sessions_id` = 1;
+"""
+
+]
 
 for query in delete_queries:
      # Execute the DELETE query
@@ -1268,12 +1356,81 @@ for query in delete_queries:
  
  
 # Define the SELECT query
-# TODO add new select statements into select_queryies list to show that DELETE operation works correctly
-select_queryies =[  
+# TODO add new select statements into select_queryies list to show that DELETE operation works correctly: done
+select_queryies =[
 """SELECT *
+FROM `department`;
+""" ,
+
+""" SELECT *
+FROM `professor`;
+""" ,
+
+""" SELECT *
 FROM `food_reservation`;
-""" 
-]    
+""" ,
+
+"""SELECT *
+FROM `student`;
+""" ,
+
+"""SELECT *
+FROM `final_exam`;
+""" ,
+
+"""SELECT *
+FROM `course`;
+""" ,
+
+"""SELECT *
+FROM  `classroom`;
+""" ,
+
+"""SELECT *
+FROM `semester`;
+""" ,
+
+"""SELECT *
+FROM `sessions_time`;
+""" ,
+
+"""SELECT *
+FROM `sessions`;
+""" ,
+
+"""SELECT *
+FROM `library`;
+""" ,
+
+"""SELECT *
+FROM `student_activity`;
+""" ,
+
+"""SELECT *
+FROM `book_reservation`;
+""" ,
+
+"""SELECT *
+FROM `book`;
+""" ,
+
+"""SELECT *
+FROM `lab`;
+""" ,
+
+"""SELECT *
+FROM `paper`;
+""" ,
+
+"""SELECT *
+FROM `activity_of_student`;
+""" ,
+
+"""SELECT *
+FROM `student_has_sessions`;
+"""
+
+]
      
 print(GREEN+"##################"+RESET)
 print(GREEN+"show tables after DELETE\n"+GREEN)
