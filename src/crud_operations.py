@@ -9,7 +9,6 @@ PINK = '\033[95m'
 PURPLE = '\033[94;95m'
 ORANGE = '\033[91;93m'
 
-
 # Create a connection to the SQLite database
 conn = sqlite3.connect('crud.db')
 
@@ -158,7 +157,6 @@ CREATE TABLE IF NOT EXISTS`course` (
 CREATE TABLE IF NOT EXISTS `classroom` (
   `classroom_id` INT NOT NULL,
   `classroom_number` VARCHAR(10) NOT NULL,
-  `classroom_building` VARCHAR(45) NULL,
   PRIMARY KEY (`classroom_id`))
 """,
 """
@@ -233,15 +231,15 @@ CREATE TABLE IF NOT EXISTS `library` (
 CREATE TABLE IF NOT EXISTS `student_activity` (
   `activity_id` INT NOT NULL,
   `activity_name` VARCHAR(20) NOT NULL,
-  `date_started` DATE NULL,
-  `date_ended` DATE NULL,
+  `date_started` VARCHAR(45) NULL,
+  `date_ended` VARCHAR(45) NULL,
   PRIMARY KEY (`activity_id`))
 """,
 """
 CREATE TABLE IF NOT EXISTS `book_reservation` (
   `book_reservation_time_domain` INT NULL,
   `book_reservation_id` INT NOT NULL,
-  `book_reservation_date` DATE NULL,
+  `book_reservation_date` VARCHAR(45) NULL,
   `student_student_id` INT NOT NULL,
   PRIMARY KEY (`book_reservation_id`, `student_student_id`),
   CONSTRAINT `fk_book_reservation_student1`
@@ -256,7 +254,7 @@ CREATE TABLE IF NOT EXISTS `book` (
   `book_id` INT NOT NULL,
   `aouthor` VARCHAR(45) NOT NULL,
   `publisher` VARCHAR(45) NULL,
-  `publication_date` DATE NULL,
+  `publication_date` VARCHAR(45) NULL,
   `library_library_id` INT NOT NULL,
   `book_reservation_book_reservation_id` INT NOT NULL,
   PRIMARY KEY (`book_id`, `library_library_id`, `book_reservation_book_reservation_id`),
@@ -273,11 +271,11 @@ CREATE TABLE IF NOT EXISTS `book` (
 """,
 """
 CREATE TABLE IF NOT EXISTS `lab` (
-  `lab_lab_name` VARCHAR(20) NOT NULL,
+  `lab_name` VARCHAR(20) NOT NULL,
   `lab_reasercher_nomber` INT NOT NULL,
   `lab_description` VARCHAR(60) NOT NULL,
   `professor_prof_id` INT NOT NULL,
-  PRIMARY KEY (`lab_lab_name`, `professor_prof_id`),
+  PRIMARY KEY (`lab_name`, `professor_prof_id`),
   CONSTRAINT `fk_lab_professor1`
     FOREIGN KEY (`professor_prof_id`)
     REFERENCES `professor` (`prof_id`)
@@ -539,6 +537,40 @@ INSERT INTO `professor` (
   22035
 );
 """ , 
+"""
+
+INSERT INTO `professor` (
+  `prof_id`,
+  `prof_firstname`,
+  `prof_lastname`,
+  `prof_phone_number`,
+  `prof_address`,
+  `prof_email`,
+  `prof_degree`,
+  `prof_job_position`,
+  `prof_gender`,
+  `prof_birth_date`,
+  `prof_sal`,
+  `prof_employment_statuse`,
+  `prof_room_number`,
+  `department_department_id`
+) VALUES (
+  202,
+  'Mostafa',
+  'Nori Baighi',
+  '09308277222',
+  'Azadi street',
+  'Nori@example.com',
+  'PhD',
+  'Professor',
+  'Male',
+  '1970-01-01',
+  5000.00,
+  'Full-time',
+  101,
+  22035
+);
+""" , 
  """
 INSERT INTO `food_reservation` (
   `food_reservation_id`,
@@ -597,8 +629,233 @@ INSERT INTO `student` (
   90,
   120
 );
+""",
 """
-
+INSERT INTO `final_exam`(
+`final_exam_date`,
+`final_exam_description`,
+`final_exam_id`
+)
+VALUES (
+    '2023-07-13',
+    'Algorithm Design exam',
+    13
+)
+""",
+"""
+INSERT INTO `course` (
+`course_id`,
+`course_name`.
+`course_no_of_unit`,
+`final_exam_final_exam_id`
+)
+VALUES (
+    11,
+    'Algorithm Design',
+    3,
+    13
+)
+""",
+"""
+INSERT INTO `classroom` (
+`classroom_id`,
+`classroom_number`
+)
+VALUES (
+    37,
+    'B37'
+)
+""",
+"""
+INSERT INTO `semester` (
+`semester_id`,
+`semester_year`,
+`semester_term`
+)
+VALUES (
+232,
+2323,
+2
+)
+""",
+"""
+INSERT INTO `sessions_time` (
+`sessions_time_id`,
+`sessions_day_of_week`,
+`sessions_time`
+)
+VALUES (
+    1,
+    'saturday',
+    10
+)
+""",
+"""
+INSERT INTO `sessions` (
+`sessions_id`,
+`sessions_no_of_student`,
+`sessions_capacity`,
+`sessions_description`,
+`classroom_classroom_id`,
+`course_course_id`,
+`department_department_id`,
+`professor_prof_id`,
+`sessions_mark`,
+`semester_semester_id`,
+`sessions_time_sessions_time_id`
+)
+VALUES (
+    111,
+    0,
+    30,
+    'Algorithm Design presented by Dr.Nouri Baighi',
+    37,
+    11,
+    22035,
+    202,
+    0,
+    232,
+    1
+)
+""",
+"""
+INSERT INTO `library` (
+`library_no_of_books`,
+`library_name`,
+`library_no_of_employees`,
+`library_established_year`,
+`library_id`
+)
+VALUES (
+    100,
+    'library',
+    10,
+    2020,
+    23
+)
+""",
+"""
+INSERT INTO `student_activity` (
+`activity_id`,
+`activity_name`,
+`date_started`,
+`date_ended`
+)
+VALUES (
+    1,
+    'TA',
+    '23-01-01',
+    '23-07-02'
+)
+""",
+"""
+INSERT INTO `book_reservation` (
+`book_reservation_time_domain`,
+`book_reservation_id`,
+`book_reservation_data`,
+`student_student_id`
+)
+VALUES (
+    14,
+    1,
+    '23-07-02',
+    4001262499
+)
+""",
+"""
+INSERT INTO `book` (
+`book_name`,
+`book_id`,
+`aouthor`,
+`publisher`,
+`publication_date`,
+`library_library_id`,
+`book_reservation_book_reservation_id`
+)
+VALUES (
+    'Good To GREAT',
+    123,
+    'Jim C. Collins',
+    'HarperCollins',
+    '2001-06-16',
+    23,
+    1
+)
+""",
+"""
+INSERT INTO `lab` (
+`lab_name`,
+`lab_reasercher_nomber`,
+`lab_description`,
+`professor_prof_id`
+)
+VALUES (
+    'lab',
+    7,
+    'Hardware lab',
+    203
+)
+""",
+"""
+INSERT INTO `paper`(
+`paper_paper_id`,
+`paper_paper_title`,
+`professor_prof_id`
+)
+VALUES (
+    1010,
+    'paper title',
+    203
+)
+""",
+"""
+INSERT INTO `activity_of_student` (
+`student_student_id`,
+`student_activity_activity_id`
+)
+VALUES (
+    4001262499,
+    1
+)
+""",
+"""
+INSERT INTO `student_has_sessions` (
+`student_has_sessions_id`,
+`shs_mark`,
+`shs_sign`,
+`shs_session_mark`,
+`shs_absence_number`,
+`shs_is_current`,
+`student_student_id`,
+`student_professor_prof_id`,
+`student_food_reservation_food_reservation_id`,
+`sessions_classroom_classroom_id`,
+`sessions_course_course_id`,
+`sessions_sessions_id`,
+`sessions_department_department_id`,
+`sessions_professor_prof_id`,
+`sessions_semester_Semester_id`,
+`sessions_sessions_time_sessions_time_id`
+)
+VALUES (
+1,
+0,
+0,
+0,
+0,
+1,
+4001262499,
+203,
+298,
+37,
+11,
+111,
+22035,
+203,
+232,
+2
+)
+""",
 ]
 
 for query in insert_queries:
