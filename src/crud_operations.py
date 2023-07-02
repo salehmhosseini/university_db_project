@@ -1016,9 +1016,36 @@ for query in select_queryies:
 conn.commit()
 
 
-# UPDATE queries 
-#TODO add new UPDATE stateents into update_queries list
+# UPDATE queries
+#TODO add new UPDATE stateents into update_queries list: done
 update_queries = [
+"""
+UPDATE `department`
+SET
+  `department_head_id` = 202
+WHERE
+  `department_id` = 22035;
+"""
+,
+
+"""
+UPDATE `professor`
+SET
+  `prof_sal` = 600.00
+WHERE
+  `prof_id` = 203;
+"""
+,
+
+"""
+UPDATE `food_reservation`
+SET
+  `food_reservation_date` = '2023-07-03'
+WHERE
+  `food_reservation_id` = 298;
+"""
+,
+
 """
 UPDATE `student`
 SET
@@ -1026,19 +1053,189 @@ SET
 WHERE
   `student_id` = 4001262499;
 """
+,
+
+"""
+UPDATE `final_exam`
+SET
+  `final_exam_date` = '2023-07-15'
+WHERE
+  `final_exam_id` = 13;
+"""
+,
+
+"""
+UPDATE `course`
+SET
+  `course_name` = 'Data Bases'
+WHERE
+  `course_id` = 11;
+"""
+,
+
+"""
+UPDATE `classroom`
+SET
+  `classroom_id` = 37
+WHERE
+  `classroom_number` = 11;
+"""
+,
+
+"""
+UPDATE `sessions_time`
+SET
+  `sessions_day_of_week` = 'monday'
+WHERE
+  `sessions_time_id` = 1;
+"""
+,
+
+"""
+UPDATE `sessions`
+SET
+  `sessions_capacity` = 35
+WHERE
+  `sessions_id` = 111;
+"""
+,
+
+"""
+UPDATE `library`
+SET
+  `library_no_of_books` = 120
+WHERE
+  `library_id` = 23;
+"""
+,
+
+"""
+UPDATE `student_activity`
+SET
+  `date_ended` = '2023-08-01'
+WHERE
+  `activity_id` = 1;
+"""
+,
+
+"""
+UPDATE `book_reservation`
+SET
+  `book_reservation_time_domain` = '2023-07-10'
+WHERE
+  `book_reservation_id` = 1;
+"""
+,
+
+"""
+UPDATE `lab`
+SET
+  `lab_description` = 'old Hardware lab'
+WHERE
+  `lab_name` = 'lab';
+"""
+,
+
+"""
+UPDATE `paper`
+SET
+  `professor_prof_id` = 202
+WHERE
+  `paper_paper_id` = 1010;
+"""
+,
+
+"""
+UPDATE `student_has_sessions`
+SET
+  `shs_sign` = 1
+WHERE
+  `student_has_sessions_id` = 1;
+"""
+
 ]
+
 
 
 for query in update_queries:
      # Execute the SELECT query
      cursor.execute(query)
 
-#TODO add new select statements into select_queryies list to show modifications after UPDATE
+#TODO add new select statements into select_queryies list to show modifications after UPDATE: done
 # Define the SELECT query
-select_queryies =[  
+select_queryies =[
+"""SELECT *
+FROM `department`;
+""" ,
+
+""" SELECT *
+FROM `professor`;
+""" ,
+
+""" SELECT *
+FROM `food_reservation`;
+""" ,
+
 """SELECT *
 FROM `student`;
-""" 
+""" ,
+
+"""SELECT *
+FROM `final_exam`;
+""" ,
+
+"""SELECT *
+FROM `course`;
+""" ,
+
+"""SELECT *
+FROM  `classroom`;
+""" ,
+
+"""SELECT *
+FROM `semester`;
+""" ,
+
+"""SELECT *
+FROM `sessions_time`;
+""" ,
+
+"""SELECT *
+FROM `sessions`;
+""" ,
+
+"""SELECT *
+FROM `library`;
+""" ,
+
+"""SELECT *
+FROM `student_activity`;
+""" ,
+
+"""SELECT *
+FROM `book_reservation`;
+""" ,
+
+"""SELECT *
+FROM `book`;
+""" ,
+
+"""SELECT *
+FROM `lab`;
+""" ,
+
+"""SELECT *
+FROM `paper`;
+""" ,
+
+"""SELECT *
+FROM `activity_of_student`;
+""" ,
+
+"""SELECT *
+FROM `student_has_sessions`;
+"""
+
 ]
 print(GREEN+"##################"+RESET)
 print(GREEN+"show tables after UPDATE\n"+GREEN)
