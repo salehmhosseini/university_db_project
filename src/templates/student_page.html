@@ -2,11 +2,12 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>پرتال ورود یکپارچه اعضا دانشگاه فردوسی مشهد</title>
-
+    <link rel="stylesheet" href="../static/student_page.css">   
 </head>
 
 <body style="font-family: Tahoma; font-size: 10pt" topmargin="0" leftmargin="0" rightmargin="0" bottommargin="0">
+
+    
     <table dir="rtl" border="0" width="100%" height="100%" cellspacing="0" cellpadding="0">
         <!-- Start header section -->
         <tr height="48px" bgcolor="#a9a9a9">
@@ -47,17 +48,19 @@
                                             <div
                                                 style="float:right;padding-left:10px;padding-top: 5px;overflow: hidden;">
                                                 <span style="background-size: 30px 30px;
-    border-radius: 50%; display: block;
-      margin: -1px;
-    overflow: hidden;  position: relative;
-    width: 30px;z-index: 0;height: 30px;
-    background-image:url(../shares/ShowPic.php?PhotoID=250871
-    );">
-                                                </span>
+                                                        border-radius: 50%; display: block;
+                                                        margin: -1px;
+                                                        overflow: hidden;  position: relative;
+                                                        width: 30px;z-index: 0;height: 30px;
+                                                        background-image:url(../shares/ShowPic.php?PhotoID=250871
+                                                        );">
+                                                                                                    </span>
                                             </div>
+                                            
                                             <div style="float:right;margin-top: 15px;overflow: hidden;"><span
-                                                    style='font-family:iransans;font-size:12px;'>کاربر: شماره دانشجویی +
+                                                    style='font-family:iransans;font-size:12px;'>کاربر: {{ request.args.get('username') }} +
                                                     عکس دانشجو <span style='color:gray;'> () </span>&nbsp;</span>
+                                                    <input type="hidden" name="username" value="{{ username }}">
                                                 <span
                                                     style='font-family:iransans;font-size:12px;'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;سال
                                                     تحصیلی: 1402-1401&nbsp;نیمسال&nbsp;دوم&nbsp;(هفته زوج)<sup
@@ -76,7 +79,7 @@
                                                     <span
                                                         style='width:22px;height:19px;position:relative;display:inline-block;'>
                                                         <strong id='notif-count' style='background:red;position:absolute;right:-5px;top:-5px;font-size:11px;padding:1px;color:white;display:
-                    none;min-width:10px;text-align:center;border-radius:5px'>0</strong>
+                                                                 none;min-width:10px;text-align:center;border-radius:5px'>0</strong>
                                                         <i class='fas fa-bell'
                                                             style='color:#039999;font-size:16px;margin:0 2px;'></i>
                                                     </span>
@@ -129,12 +132,23 @@
                         <td class="maincontent" height="100%" width="100%" colspan="40" valign="top">
                             <iframe src="about:blank" name="LeftScr" id="LeftScr" marginwidth="0" marginheight="0"
                                 height="100%" width="100%" border="0" frameborder="0"></iframe>
-                        </td>
+                        </td>  
                     </tr>
+                    <div class="container">
+                        <button class="button" onclick="go_to_info_read()">مشخصات دانشجو</button>
+                        <button class="button" onclick="go_to_modify_info()">ویرایش مشخصات</button>
+                        <button class="button" onclick="go_to_food_reservation()">رزرو غذا</button>
+                        <button class="button" onclick="go_to_class_time()">برنامه کلاسی</button>
+                        <button class="button" onclick="go_to_choose_unit()">انتخاب واحد</button>
+                        <button class="button" onclick="go_to_prof_assessment()">ارزیابی اساتید</button>
+                        <button class="button" onclick="coming_soon()">کتابخانه</button>
+                        <button class="button" onclick="coming_soon()">امور مالی</button>
+                      </div>
                 </table>
             </td>
         </tr>
     </table>
+    <script src="../static/js/student_page.js"></script>
 </body>
 
 </html>

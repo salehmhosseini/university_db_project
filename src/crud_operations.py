@@ -540,14 +540,16 @@ print(GREEN+'####################'+RESET)
 print(GREEN+'show table informations afer insertion\n'+RESET)
 
 create_triggers_queries = ["""
+DELIMITER $$
 CREATE TRIGGER Reserve_food
 AFTER INSERT ON  food_reservation 
 
-FOR EACH ROW  BEGIN
+FOR EACH ROW BEGIN
 UPDATE student
     SET student_balance = 
-      (SELECT student.student_balance FROM student WHERE student.food_reservation_food_reservation_id = NEW.food_reservation_id) -  NEW.food_price;
-END;
+      ((SELECT student.student_balance FROM student WHERE student.food_reservation_food_reservation_id = NEW.food_reservation_id) -  NEW.food_price);
+END$$
+DELIMITER ;
 """,
 """
 CREATE TRIGGER select_unit 

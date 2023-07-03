@@ -41,86 +41,117 @@
                                 method="POST" onSubmit="" class="login-form px-md-4">
                                 <div class="form-group row">
                                     <div class="col-md-6">
+                                        <label>نام</label>
                                         <div class="input-group pr-1 rounded">
-                                            <input type="text" name="first_name" class="form-control border-0"
-                                                placeholder="نام" required>
+                                            <input type="text" id="first_name" name="first_name" class="form-control border-0" placeholder="نام" required>
                                             <i class="fa text-secondary fa-user-circle"></i>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
+                                        <label>نام خانوادگی</label>
                                         <div class="input-group pr-1 rounded">
-                                            <input type="text" name="mobile" maxlength="11"
-                                                class="form-control border-0" placeholder="نام خانوادگی" required>
+                                            <input type="text" id="last_name" name="last_name" maxlength="11" class="form-control border-0" placeholder="نام خانوادگی" required>
                                             <i class="fa text-secondary fa-mobile-alt"></i>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                    <div class="col-md-6">
+                                    <label>ایمیل</label>
                                        <div class="input-group pr-1 rounded">
-                                           <input type="text" name="first_name" class="form-control border-0"
-                                               placeholder="example@gmail.com" required>
+                                           <input type="email"  id="email" name="email" class="form-control border-0" placeholder="example@gmail.com" required>
                                            <i class="fa text-secondary fa-user-circle"></i>
                                        </div>
                                    </div>
                                    <div class="col-md-6">
+                                    <label>کد ملی</label>
                                        <div class="input-group pr-1 rounded">
-                                           <input type="text" name="mobile" maxlength="11"
-                                               class="form-control border-0" placeholder="کد ملی" required>
+                                           <input type="text" id="national_code" name="national_code" maxlength="11" class="form-control border-0" placeholder="کد ملی" required>
                                            <i class="fa text-secondary fa-mobile-alt"></i>
                                        </div>
                                    </div>
                                </div>
                                <div class="form-group row">
                                    <div class="col-md-6">
+                                    <label>موبایل</label>
                                        <div class="input-group pr-1 rounded">
-                                           <input type="text" name="first_name" class="form-control border-0"
-                                               placeholder="آدرس" required>
+                                           <input type="text" id="mobile" name="mobile" class="form-control border-0" placeholder="موبایل" required>
                                            <i class="fa text-secondary fa-user-circle"></i>
                                        </div>
                                    </div>
                                    <div class="col-md-6">
-                                       <div class="input-group pr-1 rounded">
-                                           <input type="text" name="mobile" maxlength="11"
-                                               class="form-control border-0" placeholder="آیا مدیر گروه میباشد؟" required>
-                                           <i class="fa text-secondary fa-mobile-alt"></i>
-                                       </div>
-                                   </div>
+                                    <label>آیا استاد مدیر گروه است؟</label>
+                                    <div class="input-group pr-1 rounded">
+                                     <select id="is_manager" class="form-control border-0">
+                                        <option value="">-- انتخاب کنید --</option>
+                                         <option value="yes">بله</option>
+                                         <option value="no">خیر</option>
+                                       </select>
+                                    </div>
+                                </div>
                                </div>
                                <div class="form-group row">
+                                <div class="col-md-6">
+                                    <label>جنسیت</label>
+                                    <div class="input-group pr-1 rounded">
+                                     <select  id="gender" class="form-control border-0">
+                                        <option value="">-- انتخاب کنید --</option>
+                                         <option value="mail">مرد</option>
+                                         <option value="femail">زن</option>
+                                       </select>
+                                    </div>
+                                </div>
                                    <div class="col-md-6">
+                                    <label>رشته ارائه</label>
                                        <div class="input-group pr-1 rounded">
-                                           <input type="text" name="first_name" class="form-control border-0"
-                                               placeholder="درس ارائه" required>
-                                           <i class="fa text-secondary fa-user-circle"></i>
+                                        <select id="category" name="category" class="form-control border-0">
+                                            <option value="">-- انتخاب کنید --</option>
+                                            <option value="computer">کامپیوتر</option>
+                                            <option value="electric">برق</option>
+                                          </select>
                                        </div>
                                    </div>
                                    <div class="col-md-6">
-                                       <div class="input-group pr-1 rounded">
-                                           <input type="text" name="mobile" maxlength="11"
-                                               class="form-control border-0" placeholder="جنسیت" required>
-                                           <i class="fa text-secondary fa-mobile-alt"></i>
+                                    <label>درس ارائه</label>
+                                       <div id="subject" name="subject" class="input-group pr-1 rounded">
+                                        <select class="form-control border-0">
+                                            <option value="">-- Select --</option>
+                                            <option value="math">ریاضی</option>
+                                            <option value="statistic">آمار</option>
+                                            <option value="ap">برنامه نویسی پیشرفته</option>
+                                            <option value="logical_circuit">مدار های منطقی</option>
+                                            <option value="language_theory">نظریه زبان ها و ماشین ها</option>
+                                            <option value="db">پایگاه داده</option>
+                                            <option value="fundamental_elec">مبانی برنامه نویسی</option>
+                                            <option value="fundamental_comp">مبانی برق</option>
+                                            <option value="ai">مبانی هوش مصنوعی</option>
+                                            <option value="algorithm_design">طراحی الگوریتم</option>
+                                          </select>
                                        </div>
                                    </div>
                                </div>
                                 <div class="form-group row align-items-center">
                                     <div class="col-md-6">
-                                        <button type="submit" class="btn btn-primary btn-block"
-                                            name="PassRecovery">
+                                        <button type="submit" class="btn btn-primary btn-block"  name="PassRecovery">
                                             ثبت نام
                                         </button>
                                     </div>
                                     <div class="col-md-6">
-                                        <button type="reset" class="btn btn-secondary btn-block">رفتن به صفحه ورود</button>
+                                        <button type="button" class="btn btn-secondary btn-block" onclick="go_to_login()">رفتن به صفحه ورود</button>
                                     </div>
                                 </div>
                             </form>
-                        </div>
+                        </div>  
                     </div>
                 </div>
             </div>
         </div>
     </main>
+    <script>
+        function go_to_login() {
+            window.location.href = "./login_page.html"; 
+               }
+    </script>
 </body>
 
 </html>

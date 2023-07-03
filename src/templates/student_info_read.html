@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Info</title>
+
+</head>
+<body>
+    <div class="container">
+        <h1>Student Information for {{ username }}</h1>
+        <link rel="stylesheet" href="../static/student_info_read.css">
+
+
+        <table>
+            <tr>
+                <th>National Code</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Mobile</th>
+                <th>Gender</th>
+                <th>Category</th>
+                <th>Entry Year</th>
+            </tr>
+            {% for student in student_info %}
+            <tr>
+                <td>{{ student[0] }}</td>
+                <td>{{ student[1] }}</td>
+                <td>{{ student[2] }}</td>
+                <td>{{ student[3] }}</td>
+                <td>{{ student[4] }}</td>
+                <td>{{ student[5] }}</td>
+                <td>{{ student[6] }}</td>
+                <td>{{ student[7] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        <div class="back-button">
+            <a href="student_page.html">برگشت</a>
+        </div>
+    </div>
+</body>
+</html>
