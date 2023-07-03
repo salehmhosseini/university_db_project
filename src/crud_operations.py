@@ -153,6 +153,7 @@ CREATE TABLE IF NOT EXISTS `food_reservation` (
   `food_reservation_type` VARCHAR(45) NULL,
   `food_reservation_resturant` VARCHAR(20) NULL,
   `food_food_name` VARCHAR(20) NULL,
+  `food_price` FLOATE,
   PRIMARY KEY (`food_reservation_id`));
   
 """ , 
@@ -409,6 +410,7 @@ conn.commit()
 # Print a statement indicating successful execution
 print(GREEN +'There was no problem in creating the tables'+RESET)
 
+
 # TODO add other create index statements into index_queries list: Done
 # TODO add IF NOT EXISTS for all queries that you  add: Done
 
@@ -537,6 +539,39 @@ print('\n')
 print(GREEN+'####################'+RESET)
 print(GREEN+'show table informations afer insertion\n'+RESET)
 
+create_triggers_queries = ["""
+CREATE TRIGGER Reserve_food
+AFTER INSERT ON  food_reservation 
+
+FOR EACH ROW  BEGIN
+UPDATE student
+    SET student_balance = 
+      (SELECT student.student_balance FROM student WHERE student.food_reservation_food_reservation_id = NEW.food_reservation_id) -  NEW.food_price;
+END;
+""",
+"""
+CREATE TRIGGER select_unit 
+AFTER INSERT ON student_has_sessions
+
+FOR EACH ROW BEGIN
+UPDATE student 
+SET student_current_units = 
+    (SELECT course.course_no_of_unit FROM course, sessions WHERE course.course_id = sessions.course_course_id AND sessions.sessions_id = NEW.sessions_sessions_id) 
+    + (SELECT student.student_current_units FROM student WHERE student.student_id = NEW.sessions_sessions_id);
+END;
+"""
+]
+
+# Execute the create triggers queries
+for query in create_triggers_queries:
+    cursor.execute(query)
+
+# Commit the changes to the database
+conn.commit()
+
+# Print a statement indicating successful execution
+print(GREEN +'There was no problem in creating the triggers'+RESET)
+
 #TODO insert new records into insert_queries list: Done
 # insert queries 
 # Define the INSERT query
@@ -635,13 +670,15 @@ INSERT INTO `food_reservation` (
   `food_reservation_date`,
   `food_reservation_type`,
   `food_reservation_resturant`,
-  `food_food_name`
+  `food_food_name`,
+  `food_price`
 ) VALUES (
   298,
   '2023-07-02',
   'Dine-In',
   'Restaurant Poonak',
-  'Pizza'
+  'Pizza',
+  100
 );
 """ , 
 
@@ -1470,6 +1507,74 @@ for table in tables:
 
 # Commit the changes to the database
 conn.commit()
+
+create_views_queries = ["""
+CREATE VIEW show_passed_units AS
+SELECT s.student_id, passed_units
+FROM student s, SUM(SELECT course.course_no_of_unit 
+                FROM course, sessions, student_has_sessions shs 
+                WHERE s.student_id = shs.student_student_id 
+                AND shs.sessions_sessions_id = sessions.sessions_id 
+                AND course.id = sessions_course_course_id 
+                AND shs.shs_sign = 1 
+                AND shs.mark > 10) AS passed_units;
+""",
+"""
+CREATE VIEW show_passed_units AS
+SELECT s.student_id, passed_units
+FROM student s, SUM(SELECT course.course_no_of_unit 
+                FROM course, sessions, student_has_sessions shs 
+                WHERE s.student_id = shs.student_student_id 
+                AND shs.sessions_sessions_id = sessions.sessions_id 
+                AND course.id = sessions_course_course_id 
+                AND shs.shs_sign = 1 
+                AND shs.mark > 10) AS passed_units;
+""",
+"""
+CREATE VIEW pass_less_than_specific_limit AS
+SELECT s.student_firstname, s.student_lastname, s._student_id, unit_pass
+FROM student s, sessions ss, student_has_Sessions shs, (SELECT course.course_no_of_unit as unit,  
+                                                        FROM course 
+                                                        WHERE ss.sessions_id = course_sessions_id 
+                                                        AND shs.sessions_id = ss.sessions_id 
+                                                        AND shs.student_sign = 1) AS units
+WHERE (SUM(SELECT units.unit FROM units WHERE s.student_id = shs.student_student_id)) AS unit_pass < 12;
+""",
+"""
+CREATE VIEW avg_of_sessions AS 
+SELECT s.semester_term, avg_of_s
+FROM semester s, (SELECT SUM(shs.shs_mark) / COUNT(shs.student_student_id) 
+                  FROM student_has_sessions shs 
+                  WHERE shs.semester_semester_id = s.semester_id 
+                  AND shs.shs_is_current = 1) AS avg_of_s
+ORDER BY avg_of_s;
+"""
+]
+
+# Execute the create  queries
+for query in create_views_queries:
+    cursor.execute(query)
+
+     # Fetch all the rows returned by the query
+    rows = cursor.fetchall()
+    table_name = query.split('FROM ')[1].split(';')[0].strip('`')
+     
+     # Print the table name
+    print(PURPLE+"Table: ", table_name+RESET)
+     
+     # Print the retrieved data
+    for row in rows:
+        print(row)
+    print('\n')
+     
+     
+print('successfully execution\n')
+
+# Commit the changes to the database
+conn.commit()
+
+# Print a statement indicating successful execution
+print(GREEN +'There was no problem in creating the views'+RESET)
 
 
 # Close the cursor and connection
