@@ -28,12 +28,27 @@ complete the below sections
 + financial section
 ![student page](https://github.com/salehmhosseini/university_db_project/blob/main/screenshots/student_page.png)
 *** 
-## Getting Started
-1. install prerequisites
+## Getting Started 
+
+1. clone the repository <br>
+clone with `SSH` <br>
+
+       git clone git@github.com:salehmhosseini/university_db_project.git
+clone with `HTTPS` <br>
+
+       git clone https://github.com/salehmhosseini/university_db_project.git
+
+3. install prerequisites
 Inline `code` <br>
-   pip install flask sqlite3
-2. run the app.py
-Inline `code`
-  python app.py
-3. open your browser and go to your [localhost](http://127.0.0.1:5000/)
+
+       pip install flask sqlite3
+   
+4. run the app.py <br>
+Inline `code` <br>
+
+         python app.py
+   
+5. open your browser and go to your [localhost](http://127.0.0.1:5000/)
+
+![run the app]()
    
