@@ -11,7 +11,7 @@ The appearance of this project is inspired by Ferdowsi university of Mashhad por
 ![login_page](https://github.com/salehmhosseini/university_db_project/blob/main/screenshots/login.png)
 
 ### Signup Page
-![signup page](https://github.com/salehmhosseini/university_db_project/blob/main/screenshots/signup.png
+![signup page](https://github.com/salehmhosseini/university_db_project/blob/main/screenshots/signup.png)
 
 ### Student Information
 ![student info](https://github.com/salehmhosseini/university_db_project/blob/main/screenshots/student_info.png)
@@ -27,3 +27,9 @@ complete the below sections
 + library
 + financial section
 ![student page](https://github.com/salehmhosseini/university_db_project/blob/main/screenshots/student_page.png)
+*** 
+## Getting Started
+1. install prerequisites
+Inline `code`
+  pip install flask sqlite3
+  
