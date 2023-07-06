@@ -1,4 +1,4 @@
-# university_db_project
+![run](https://github.com/salehmhosseini/university_db_project/assets/97988967/c2b6532d-d106-4081-8589-e3c67a44b103)# university_db_project
 This is university database project . purpose of this project is that design database for an university management system. <br>
 
 The appearance of this project is inspired by Ferdowsi university of Mashhad portal [website](https://pooya.um.ac.ir/gateway/PuyaAuthenticate.php)
@@ -50,5 +50,5 @@ Inline `code` <br>
    
 5. open your browser and go to your [localhost](http://127.0.0.1:5000/)
 
-![run the app]()
+![run the app](https://github.com/salehmhosseini/university_db_project/blob/main/screenshots/run.png)
    
