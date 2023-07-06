@@ -26,4 +26,4 @@ complete the below sections
 + proffessot assessment
 + library
 + financial section
-
+![student page](https://github.com/salehmhosseini/university_db_project/blob/main/screenshots/student_page.png)
