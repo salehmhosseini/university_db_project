@@ -9,3 +9,21 @@ The appearance of this project is inspired by Ferdowsi university of Mashhad por
 ### Login Page
 
 ![login_page](https://github.com/salehmhosseini/university_db_project/blob/main/screenshots/login.png)
+
+### Signup Page
+![signup page](https://github.com/salehmhosseini/university_db_project/blob/main/screenshots/signup.png
+
+### Student Information
+![student info](https://github.com/salehmhosseini/university_db_project/blob/main/screenshots/student_info.png)
+
+*** 
+## TODO
+complete the below sections
++ Edit student profile
++ Food reservation
++ course time table
++ unit choosing
++ proffessot assessment
++ library
++ financial section
+
