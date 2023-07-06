@@ -30,6 +30,10 @@ complete the below sections
 *** 
 ## Getting Started
 1. install prerequisites
+Inline `code` <br>
+   pip install flask sqlite3
+2. run the app.py
 Inline `code`
-  pip install flask sqlite3
-  
+  python app.py
+3. open your browser and go to your [localhost](http://127.0.0.1:5000/)
+   
